@@ -1,0 +1,26 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "explorer.compactFolders": false,
+  "material-icon-theme.folders.associations": {
+    "migrations": "tools",
+    "http": "container",
+    "infra": "app",
+    "repositories": "mappings",
+    "dtos": "typescript",
+    "fakes": "mock",
+    "modules": "components",
+    "schemas": "class",
+    "entities": "class",
+    "__mocks__": "mock"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.tabs.enabled": false,
+  "editor.formatOnSave": false,
+}

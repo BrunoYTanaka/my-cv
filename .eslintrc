@@ -4,6 +4,7 @@
   "rules": {
     "prettier/prettier": "error",
     "camelcase": "off",
+    "semi":"off",
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
@@ -42,13 +43,6 @@
         "@typescript-eslint/no-use-before-define": [1],
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/quotes": [
-          2,
-          "backtick",
-          {
-            "avoidEscape": true
-          }
-        ]
       }
     }
   ]
