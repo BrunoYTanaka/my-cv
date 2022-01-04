@@ -1,8 +1,9 @@
 import { styled } from '@mui/material/styles'
-import Link from '@mui/material/Link'
-import Icon from '@mui/material/Icon'
+import MListItem from '@mui/material/ListItem'
+import MListItemText from '@mui/material/ListItemText'
+import MListItemIcon from '@mui/material/ListItemIcon'
 
-export const ListItemText = styled(Link)(({ theme }) => ({
+export const ListItemText = styled(MListItemText)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.text.primary,
   fontWeight: 'normal',
@@ -11,25 +12,26 @@ export const ListItemText = styled(Link)(({ theme }) => ({
   letterSpacing: 1,
 }))
 
-export const ListItemIcon = styled(Icon)({
+export const ListItemIcon = styled(MListItemIcon)({
   display: 'flex',
   alignItems: 'center',
-  marginRight: 15,
+  minWidth: 0,
   transition: 'all ease-in-out .2s',
 })
 
-export const ListItem = styled('li')(({ theme }) => ({
+export const ListItem = styled(MListItem)(({ theme }) => ({
   display: 'flex',
+  padding: 0,
   alignItems: 'center',
+  gap: 15,
   width: 'fit-content',
   cursor: 'pointer',
-  marginBottom: 10,
   '&:hover': {
     [`${ListItemText}`]: {
       color: theme.palette.text.secondary,
     },
     [`${ListItemIcon}`]: {
-      color: theme.palette.text.secondary,
+      color: '#0bceaf',
     },
   },
 }))
