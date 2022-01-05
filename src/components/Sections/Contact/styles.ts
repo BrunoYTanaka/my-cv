@@ -9,21 +9,17 @@ interface TextData {
 }
 
 export const Container = styled(Grid)(({ theme }) => ({
-  maxWidth: 1140,
   margin: '0 auto',
-  padding: '180px 15px',
-  [theme.breakpoints.down('xl')]: {
-    maxWidth: 900,
-  },
+  padding: '180px 0',
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column-reverse',
     maxWidth: 'none',
-    padding: '60px 15px',
+    padding: '60px 0',
     textAlign: 'center',
   },
 }))
 
-export const GreetingText = styled(Typography)({
+export const GreetingText = styled(Typography)(() => ({
   display: 'inline-block',
   backgroundColor: '#0bceaf',
   padding: '10px 30px',
@@ -33,7 +29,7 @@ export const GreetingText = styled(Typography)({
   borderBottomRightRadius: 20,
   borderBottomLeftRadius: 0,
   marginBottom: 30,
-})
+}))
 
 export const Text = styled(Typography)(
   ({ marginTop, marginBottom }: TextData) => ({

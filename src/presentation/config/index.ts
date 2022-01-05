@@ -8,7 +8,7 @@ export const layout = {
       {
         id: 0,
         icon: 'email',
-        text: 'bruno@gmail.com',
+        text: 'brunoyoichi2@gmail.com',
       },
       {
         id: 1,
@@ -31,6 +31,41 @@ export const layout = {
         id: 1,
         icon: 'twitter',
         link: 'https://twitter.com/BrunoYoichi',
+      },
+    ],
+  },
+  skills: {
+    title: 'About Me',
+    description:
+      'Hello, I’m a Bruno, web-developer based on Brazil. I have experience in web site building and customization. Also I have experience with',
+    tools: [
+      {
+        id: 0,
+        name: 'Javascript',
+      },
+      {
+        id: 1,
+        name: 'NodeJS',
+      },
+      {
+        id: 2,
+        name: 'ReactJS',
+      },
+      {
+        id: 3,
+        name: 'Typescript',
+      },
+      {
+        id: 4,
+        name: 'Jest',
+      },
+      {
+        id: 5,
+        name: 'CSS',
+      },
+      {
+        id: 5,
+        name: 'NextJS',
       },
     ],
   },

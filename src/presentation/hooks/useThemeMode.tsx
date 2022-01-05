@@ -15,10 +15,10 @@ interface ThemeModeContextProviderProps {
 export function ThemeModeContextProvider({
   children,
 }: ThemeModeContextProviderProps) {
-  const [mode, setMode] = React.useState<'dark' | 'light'>(`dark`)
+  const [mode, setMode] = React.useState<'dark' | 'light'>('dark')
 
   const toggleThemeMode = React.useCallback(() => {
-    setMode((prevMode) => (prevMode === `light` ? `dark` : `light`))
+    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
   }, [])
 
   const theme = React.useMemo(

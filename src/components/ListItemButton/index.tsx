@@ -3,7 +3,7 @@ import NextLink from 'next/link'
 import * as S from './styles'
 
 interface ListItemButtonProps {
-  icon: string
+  icon: React.ReactNode
   href: string
 }
 
