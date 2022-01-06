@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Container, InfoWrapper, Tools, ToolsItem, Button } from './styles'
 import skillsImage from '../../../../public/skills.png'
 import { Typography } from '../../Typography'
+import { MotionBox } from '@/components'
 
 interface Tool {
   id: number
@@ -21,27 +22,31 @@ function AboutMe({ title, description, tools }: AboutMeProps) {
   return (
     <Container container alignItems="flex-start" justifyContent="space-between">
       <Grid item sm={6} alignSelf="center">
-        <Image
-          alt="Skill Image"
-          src={skillsImage}
-          // layout="responsive"
-          width={540}
-          height={340}
-        />
+        <MotionBox delay={0.4}>
+          <Image alt="Skill Image" src={skillsImage} width={540} height={340} />
+        </MotionBox>
       </Grid>
       <InfoWrapper item sm={6}>
-        <Typography margin="10px 0" fontWeight={700} variant="h3">
-          {title}
-        </Typography>
-        <Typography margin="0 0 30px 0" fontWeight={500} variant="subtitle1">
-          {description}
-        </Typography>
-        <Tools>
-          {tools.map((tool) => (
-            <ToolsItem key={tool.id}>{tool.name}</ToolsItem>
-          ))}
-        </Tools>
-        <Button variant="outlined">Download CV</Button>
+        <MotionBox delay={0.1}>
+          <Typography margin="10px 0" fontWeight={700} variant="h3">
+            {title}
+          </Typography>
+        </MotionBox>
+        <MotionBox delay={0.2}>
+          <Typography margin="0 0 30px 0" fontWeight={500} variant="subtitle1">
+            {description}
+          </Typography>
+        </MotionBox>
+        <MotionBox delay={0.3}>
+          <Tools>
+            {tools.map((tool) => (
+              <ToolsItem key={tool.id}>{tool.name}</ToolsItem>
+            ))}
+          </Tools>
+        </MotionBox>
+        <MotionBox delay={0.4}>
+          <Button variant="outlined">Download CV</Button>
+        </MotionBox>
       </InfoWrapper>
     </Container>
   )

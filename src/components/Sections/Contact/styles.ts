@@ -29,7 +29,11 @@ export const GreetingText = styled(MuiTypography)(() => ({
 export const AvatarContainer = styled('div')(({ theme }) => ({
   position: 'relative',
   display: 'block',
-  border: '20px solid rgba(0, 0, 0, 0.9)',
+  border: `20px solid ${
+    theme.palette.mode === 'light'
+      ? theme.palette.grey[200]
+      : 'rgba(0, 0, 0, 0.9)'
+  }`,
   borderRadius: '50%',
   margin: '0 auto',
   width: 360,

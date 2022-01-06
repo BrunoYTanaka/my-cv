@@ -4,14 +4,13 @@ import Grid from '@mui/material/Grid'
 
 import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
 import { Typography } from '../../Typography'
-import { List, ListItem, ListItemButton } from '@/components'
+import { List, ListItem, ListItemButton, MotionBox } from '@/components'
 import EmailIcon from '@mui/icons-material/Email'
 import PhoneIcon from '@mui/icons-material/Phone'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import { SvgIconComponent } from '@mui/icons-material'
-
 interface ContactData {
   id: number
   icon: string
@@ -48,45 +47,63 @@ function Contact({
     location: LocationOnIcon,
     twitter: TwitterIcon,
   }
+
   return (
     <Container container justifyContent="center" alignItems="center">
       <Grid item sm={6}>
-        <GreetingText variant="body1">{greetings}</GreetingText>
-        <Typography margin="10px 0" variant="h4">
-          {name}
-        </Typography>
-        <Typography margin="10px 0 30px" variant="h5">
-          {job}
-        </Typography>
-        <List>
-          {contacts?.map((contact) => {
-            const Icon = icons[contact.icon]
-            return (
-              <ListItem
-                key={contact.id}
-                icon={<Icon fontSize="small" />}
-                text={contact.text}
-              />
-            )
-          })}
-        </List>
-        <List direction="row" gap={30}>
-          {socialMedia.map((media) => {
-            const Icon = icons[media.icon]
-            return (
-              <ListItemButton
-                key={media.id}
-                href={media.link}
-                icon={<Icon fontSize="medium" />}
-              />
-            )
-          })}
-        </List>
+        <MotionBox delay={0.1}>
+          <GreetingText variant="body1">{greetings}</GreetingText>
+        </MotionBox>
+        <MotionBox delay={0.2}>
+          <Typography margin="10px 0" variant="h4">
+            {name}
+          </Typography>
+        </MotionBox>
+        <MotionBox delay={0.3}>
+          <Typography margin="10px 0 30px" variant="h5">
+            {job}
+          </Typography>
+        </MotionBox>
+        <MotionBox delay={0.4}>
+          <List>
+            {contacts?.map((contact) => {
+              const Icon = icons[contact.icon]
+              return (
+                <ListItem
+                  key={contact.id}
+                  icon={<Icon fontSize="small" />}
+                  text={contact.text}
+                />
+              )
+            })}
+          </List>
+        </MotionBox>
+        <MotionBox delay={0.7}>
+          <List direction="row" gap={30}>
+            {socialMedia.map((media) => {
+              const Icon = icons[media.icon]
+              return (
+                <ListItemButton
+                  key={media.id}
+                  href={media.link}
+                  icon={<Icon fontSize="medium" />}
+                />
+              )
+            })}
+          </List>
+        </MotionBox>
       </Grid>
       <Grid item sm={6}>
-        <AvatarContainer>
-          <Avatar alt={name} src={avatarUrl} layout="fill" objectFit="cover" />
-        </AvatarContainer>
+        <MotionBox delay={0.6}>
+          <AvatarContainer>
+            <Avatar
+              alt={name}
+              src={avatarUrl}
+              layout="fill"
+              objectFit="cover"
+            />
+          </AvatarContainer>
+        </MotionBox>
       </Grid>
     </Container>
   )
