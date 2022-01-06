@@ -7,8 +7,8 @@ function Home() {
   return (
     <React.Fragment>
       <Contact {...layout.contact} />
-      <Skills />
-      <AboutMe {...layout.skills} />
+      <AboutMe {...layout.aboutMe} />
+      <Skills {...layout.skills} />
     </React.Fragment>
   )
 }

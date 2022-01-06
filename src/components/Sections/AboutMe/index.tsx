@@ -24,7 +24,7 @@ function AboutMe({ title, description, tools }: AboutMeProps) {
         <Image
           alt="Skill Image"
           src={skillsImage}
-          layout="responsive"
+          // layout="responsive"
           width={540}
           height={340}
         />

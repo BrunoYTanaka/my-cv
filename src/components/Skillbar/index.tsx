@@ -10,7 +10,7 @@ interface SkillbarProps {
 
 function Skillbar({ name, percentage }: SkillbarProps): ReactElement {
   return (
-    <Grid container spacing={1} mb={2}>
+    <Grid container spacing={1} mt={2}>
       <Grid item sm={12} style={{ width: '100%' }}>
         <Grid container justifyContent="space-between">
           <Grid item sm={6}>

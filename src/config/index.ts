@@ -34,7 +34,7 @@ export const layout = {
       },
     ],
   },
-  skills: {
+  aboutMe: {
     title: 'About Me',
     description:
       'Hello, I’m a Bruno, web-developer based on Brazil. I have experience in web site building and customization. Also I have experience with',
@@ -64,9 +64,65 @@ export const layout = {
         name: 'CSS',
       },
       {
-        id: 5,
+        id: 6,
         name: 'NextJS',
       },
     ],
+  },
+  skills: {
+    technicalSKills: {
+      title: 'Technical Skills',
+      skills: [
+        {
+          id: 0,
+          name: 'Javascript',
+          percentage: 81,
+        },
+        {
+          id: 1,
+          name: 'ReactJS',
+          percentage: 68,
+        },
+        {
+          id: 2,
+          name: 'NodeJS',
+          percentage: 61,
+        },
+        {
+          id: 3,
+          name: 'Typescript',
+          percentage: 55,
+        },
+        {
+          id: 4,
+          name: 'CSS',
+          percentage: 67,
+        },
+      ],
+    },
+    professionalSkills: {
+      title: 'Professional Skills',
+      skills: [
+        {
+          id: 0,
+          caption: 'Team Work',
+          text: "I love working in a team, I'm not afraid to ask or answer questions from other people on the team.",
+          percentage: 90,
+        },
+        {
+          id: 1,
+          caption: 'Responsability',
+          text: 'I know my responsibilities and I will try my best not to disappoint.',
+          percentage: 87,
+        },
+
+        {
+          id: 2,
+          caption: 'Communication',
+          text: "I'm not afraid to ask when I have doubts and anyway if you need help I'm always willing to help",
+          percentage: 75,
+        },
+      ],
+    },
   },
 }

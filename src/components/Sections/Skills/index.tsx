@@ -4,33 +4,71 @@ import * as S from './styles'
 import { Typography } from '../../Typography'
 import { Skillbar, CircularSkillbar } from '@/components'
 
-interface SkillsProps {}
+interface TechnicalSKills {
+  id: number
+  name: string
+  percentage: number
+}
 
-function Skills({}: SkillsProps): ReactElement {
+interface ProfessionalSkills {
+  id: number
+  caption: string
+  text: string
+  percentage: number
+}
+interface SkillsProps {
+  technicalSKills: {
+    title: string
+    skills: TechnicalSKills[]
+  }
+  professionalSkills: {
+    title: string
+    skills: ProfessionalSkills[]
+  }
+}
+
+function Skills({
+  technicalSKills,
+  professionalSkills,
+}: SkillsProps): ReactElement {
   return (
-    <Grid container alignItems="center" justifyContent="center">
+    <S.Container container alignItems="flex-start" justifyContent="center">
       <Grid item sm={6}>
         <Typography variant="h4" fontWeight={700} align="center">
-          Technical Skills
+          {technicalSKills.title}
         </Typography>
-        <Skillbar name="Javascript" percentage={71} />
-        <Skillbar name="ReactJS" percentage={68} />
-        <Skillbar name="NodeJS" percentage={61} />
-        <Skillbar name="Typescript" percentage={55} />
-        <Skillbar name="CSS" percentage={68} />
+        {technicalSKills.skills.map((skill) => (
+          <Skillbar
+            key={skill.id}
+            name={skill.name}
+            percentage={skill.percentage}
+          />
+        ))}
       </Grid>
-      <Grid item sm={6}>
+      <S.ProfessionalSkillsWrapper item sm={6}>
         <Typography variant="h4" fontWeight={700} align="center">
-          Professional Skills
+          {professionalSkills.title}
         </Typography>
-        <Grid container item sm={12}>
-          <CircularSkillbar />
-          <CircularSkillbar />
-          <CircularSkillbar />
-          <CircularSkillbar />
-        </Grid>
-      </Grid>
-    </Grid>
+        {professionalSkills.skills.map((skill) => (
+          <Grid
+            key={skill.id}
+            container
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Grid item sm={3}>
+              <CircularSkillbar percents={skill.percentage} />
+            </Grid>
+            <Grid item sm={9}>
+              <Typography>
+                <b>{skill.caption}</b>:{skill.text}
+              </Typography>
+            </Grid>
+          </Grid>
+        ))}
+      </S.ProfessionalSkillsWrapper>
+    </S.Container>
   )
 }
 

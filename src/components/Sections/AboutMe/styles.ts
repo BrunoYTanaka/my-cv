@@ -17,6 +17,7 @@ export const InfoWrapper = styled(Grid)(({ theme }) => ({
   paddingLeft: 50,
   [theme.breakpoints.down('sm')]: {
     paddingLeft: 0,
+    marginBottom: 80,
   },
 }))
 

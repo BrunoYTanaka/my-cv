@@ -15,7 +15,6 @@ interface CircularSkillbarProps {
   duration?: number
   size?: number
   strokeWidth?: number
-  caption?: string
 }
 
 function CircularSkillbar({
@@ -48,15 +47,8 @@ function CircularSkillbar({
     },
   }
   return (
-    <Grid
-      container
-      item
-      sm={6}
-      mb={2}
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Box height={size}>
+    <>
+      <Box height={size} width="fit-content" position="relative" marginTop={2}>
         <Circle size={size}>
           <circle
             cx="50"
@@ -83,13 +75,27 @@ function CircularSkillbar({
             animate="show"
           />
         </Circle>
+        {counter && (
+          <Grid
+            container
+            item
+            alignItems="center"
+            justifyContent="center"
+            style={{
+              position: 'absolute',
+              fontSize: 18,
+              fontWeight: 400,
+              top: 0,
+              left: 0,
+              height: '100%',
+              width: '100%',
+            }}
+          >
+            {percents}%
+          </Grid>
+        )}
       </Box>
-      {counter && (
-        <Box position="absolute" fontSize={18} fontWeight={400}>
-          50%
-        </Box>
-      )}
-    </Grid>
+    </>
   )
 }
 

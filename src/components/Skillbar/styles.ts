@@ -12,6 +12,7 @@ export const Skillbar = styled('div')(({ theme }) => ({
 export const SkillbarProgress = styled(motion.span)(() => ({
   position: 'absolute',
   top: 0,
+  left: 0,
   backgroundColor: '#0bceaf',
   height: '0.5rem',
   borderRadius: '0.625rem',
