@@ -1,49 +1,36 @@
+import React, { ReactElement } from 'react'
 import Grid from '@mui/material/Grid'
-import React from 'react'
-import Image from 'next/image'
-
-import { Container, InfoWrapper, Tools, ToolsItem, Button } from './styles'
-import skillsImage from '../../../../public/skills.png'
+import * as S from './styles'
 import { Typography } from '../../Typography'
+import { Skillbar, CircularSkillbar } from '@/components'
 
-interface Tool {
-  id: number
-  name: string
-}
+interface SkillsProps {}
 
-interface SkillsProps {
-  title: string
-  description: string
-  tools: Tool[]
-}
-
-function Skills({ title, description, tools }: SkillsProps) {
+function Skills({}: SkillsProps): ReactElement {
   return (
-    <Container container alignItems="flex-start" justifyContent="space-between">
-      <Grid item sm={6} alignSelf="center">
-        <Image
-          alt="Skill Image"
-          src={skillsImage}
-          layout="responsive"
-          width={540}
-          height={340}
-        />
+    <Grid container alignItems="center" justifyContent="center">
+      <Grid item sm={6}>
+        <Typography variant="h4" fontWeight={700} align="center">
+          Technical Skills
+        </Typography>
+        <Skillbar name="Javascript" percentage={71} />
+        <Skillbar name="ReactJS" percentage={68} />
+        <Skillbar name="NodeJS" percentage={61} />
+        <Skillbar name="Typescript" percentage={55} />
+        <Skillbar name="CSS" percentage={68} />
       </Grid>
-      <InfoWrapper item sm={6}>
-        <Typography margin="10px 0" fontWeight={700} variant="h3">
-          {title}
+      <Grid item sm={6}>
+        <Typography variant="h4" fontWeight={700} align="center">
+          Professional Skills
         </Typography>
-        <Typography margin="0 0 30px 0" fontWeight={500} variant="subtitle1">
-          {description}
-        </Typography>
-        <Tools>
-          {tools.map((tool) => (
-            <ToolsItem key={tool.id}>{tool.name}</ToolsItem>
-          ))}
-        </Tools>
-        <Button variant="outlined">Download CV</Button>
-      </InfoWrapper>
-    </Container>
+        <Grid container item sm={12}>
+          <CircularSkillbar />
+          <CircularSkillbar />
+          <CircularSkillbar />
+          <CircularSkillbar />
+        </Grid>
+      </Grid>
+    </Grid>
   )
 }
 

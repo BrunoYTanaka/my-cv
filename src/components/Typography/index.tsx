@@ -12,8 +12,8 @@ const Typography = styled(MuiTypography)<TypographyProps>(
   ({ margin, fontWeight, fontSize, lineHeight }) => ({
     margin: margin || '10px',
     fontWeight: fontWeight || 500,
-    fontSize: `${fontSize}rem`,
-    lineHeight: `${lineHeight}rem`,
+    fontSize: fontSize && `${fontSize}rem`,
+    lineHeight: lineHeight && `${lineHeight}rem`,
   }),
 )
 
