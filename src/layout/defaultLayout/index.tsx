@@ -1,11 +1,12 @@
-import { useThemeMode } from '@/presentation/hooks/useThemeMode'
+import { useThemeMode } from '@/hooks/useThemeMode'
 import { ThemeProvider } from '@mui/material/styles'
 import { Container } from './styles'
-interface DefaultLayout {
+
+interface DefaultLayoutProps {
   children: React.ReactNode
 }
 
-export function DefaultLayout({ children }: DefaultLayout) {
+function DefaultLayout({ children }: DefaultLayoutProps) {
   const { theme } = useThemeMode()
   return (
     <ThemeProvider theme={theme}>
@@ -13,3 +14,5 @@ export function DefaultLayout({ children }: DefaultLayout) {
     </ThemeProvider>
   )
 }
+
+export { DefaultLayout }

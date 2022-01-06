@@ -1,12 +1,7 @@
 import { styled } from '@mui/material/styles'
 import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
+import MuiTypography from '@mui/material/Typography'
 import Image from 'next/image'
-
-interface TextData {
-  marginTop: number
-  marginBottom: number
-}
 
 export const Container = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
@@ -19,7 +14,7 @@ export const Container = styled(Grid)(({ theme }) => ({
   },
 }))
 
-export const GreetingText = styled(Typography)(() => ({
+export const GreetingText = styled(MuiTypography)(() => ({
   display: 'inline-block',
   backgroundColor: '#0bceaf',
   padding: '10px 30px',
@@ -30,14 +25,6 @@ export const GreetingText = styled(Typography)(() => ({
   borderBottomLeftRadius: 0,
   marginBottom: 30,
 }))
-
-export const Text = styled(Typography)(
-  ({ marginTop, marginBottom }: TextData) => ({
-    marginTop: marginTop,
-    marginBottom: marginBottom,
-    fontWeight: 'bold',
-  }),
-)
 
 export const AvatarContainer = styled('div')(({ theme }) => ({
   position: 'relative',

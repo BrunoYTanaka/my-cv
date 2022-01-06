@@ -1,13 +1,6 @@
 import { styled } from '@mui/material/styles'
 import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-import MButton, { ButtonProps } from '@mui/material/Button'
-
-interface TextData {
-  marginTop: number
-  marginBottom: number
-  fontWeight: 300 | 500 | 700
-}
+import MuiButton, { ButtonProps } from '@mui/material/Button'
 
 export const Container = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
@@ -26,14 +19,6 @@ export const InfoWrapper = styled(Grid)(({ theme }) => ({
     paddingLeft: 0,
   },
 }))
-
-export const Text = styled(Typography)(
-  ({ marginTop, marginBottom, fontWeight }: TextData) => ({
-    marginTop: marginTop,
-    marginBottom: marginBottom,
-    fontWeight: fontWeight,
-  }),
-)
 
 export const Tools = styled('ul')(({ theme }) => ({
   paddingLeft: 0,
@@ -56,7 +41,7 @@ export const ToolsItem = styled('li')(() => ({
   fontWeight: 300,
 }))
 
-export const Button = styled(MButton)<ButtonProps>(({ theme }) => ({
+export const Button = styled(MuiButton)<ButtonProps>(({ theme }) => ({
   marginTop: 20,
   padding: '10px 15px',
   borderRadius: 24,

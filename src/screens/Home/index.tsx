@@ -1,7 +1,7 @@
 import React from 'react'
-import { Contact, Skills } from '@/components/Sections'
+import { Contact, Skills } from '@/components'
 
-import { layout } from '@/presentation/config'
+import { layout } from '@/config'
 
 function Home() {
   return (

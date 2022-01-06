@@ -1,15 +1,15 @@
 import { styled } from '@mui/material/styles'
-import MListItemIcon from '@mui/material/ListItemIcon'
-import MListItemButton from '@mui/material/ListItemButton'
+import MuiListItemIcon from '@mui/material/ListItemIcon'
+import MuiListItemButton from '@mui/material/ListItemButton'
 
-export const ListItemIcon = styled(MListItemIcon)({
+export const ListItemIcon = styled(MuiListItemIcon)({
   display: 'flex',
   alignItems: 'center',
   minWidth: 0,
   transition: 'all ease-in-out .2s',
 })
 
-export const ListItemButton = styled(MListItemButton)({
+export const ListItemButton = styled(MuiListItemButton)({
   display: 'flex',
   padding: 0,
   flexGrow: 0,

@@ -2,13 +2,8 @@ import React, { ReactElement } from 'react'
 
 import Grid from '@mui/material/Grid'
 
-import {
-  Avatar,
-  AvatarContainer,
-  Container,
-  GreetingText,
-  Text,
-} from './styles'
+import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
+import { Typography } from '../../Typography'
 import { List, ListItem, ListItemButton } from '@/components'
 import EmailIcon from '@mui/icons-material/Email'
 import PhoneIcon from '@mui/icons-material/Phone'
@@ -57,13 +52,12 @@ function Contact({
     <Container container justifyContent="center" alignItems="center">
       <Grid item sm={6}>
         <GreetingText variant="body1">{greetings}</GreetingText>
-        <Text marginBottom={10} marginTop={10} variant="h4">
+        <Typography margin="10px 0" variant="h4">
           {name}
-        </Text>
-        <Text marginBottom={30} marginTop={0} variant="h5">
+        </Typography>
+        <Typography margin="10px 0 30px" variant="h5">
           {job}
-        </Text>
-
+        </Typography>
         <List>
           {contacts?.map((contact) => {
             const Icon = icons[contact.icon]

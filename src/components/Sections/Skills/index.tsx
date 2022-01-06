@@ -2,15 +2,9 @@ import Grid from '@mui/material/Grid'
 import React from 'react'
 import Image from 'next/image'
 
-import {
-  Container,
-  InfoWrapper,
-  Text,
-  Tools,
-  ToolsItem,
-  Button,
-} from './styles'
+import { Container, InfoWrapper, Tools, ToolsItem, Button } from './styles'
 import skillsImage from '../../../../public/skills.png'
+import { Typography } from '../../Typography'
 
 interface Tool {
   id: number
@@ -36,17 +30,12 @@ function Skills({ title, description, tools }: SkillsProps) {
         />
       </Grid>
       <InfoWrapper item sm={6}>
-        <Text marginTop={20} marginBottom={20} fontWeight={700} variant="h3">
+        <Typography margin="10px 0" fontWeight={700} variant="h3">
           {title}
-        </Text>
-        <Text
-          marginTop={0}
-          marginBottom={30}
-          fontWeight={500}
-          variant="subtitle1"
-        >
+        </Typography>
+        <Typography margin="0 0 30px 0" fontWeight={500} variant="subtitle1">
           {description}
-        </Text>
+        </Typography>
         <Tools>
           {tools.map((tool) => (
             <ToolsItem key={tool.id}>{tool.name}</ToolsItem>
