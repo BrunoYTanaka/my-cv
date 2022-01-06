@@ -9,6 +9,19 @@ interface SkillbarProps {
 }
 
 function Skillbar({ name, percentage }: SkillbarProps): ReactElement {
+  const variants = {
+    empty: {
+      width: 0,
+    },
+    fill: {
+      width: `${percentage}%`,
+    },
+  }
+  const transition = {
+    duration: 0.8,
+    delay: 0.4,
+    ease: 'easeInOut',
+  }
   return (
     <Grid container spacing={1} mt={2}>
       <Grid item sm={12} style={{ width: '100%' }}>
@@ -26,10 +39,11 @@ function Skillbar({ name, percentage }: SkillbarProps): ReactElement {
       <Grid item sm={12} style={{ width: '100%' }}>
         <S.Skillbar>
           <S.SkillbarProgress
-            transition={{ duration: 1 }}
-            animate={{
-              width: ['0%', `${percentage}%`],
-            }}
+            initial="empty"
+            viewport={{ once: true }}
+            transition={transition}
+            variants={variants}
+            whileInView="fill"
           />
         </S.Skillbar>
       </Grid>
