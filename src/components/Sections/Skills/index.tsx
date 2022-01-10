@@ -33,9 +33,14 @@ function Skills({
 }: SkillsProps): ReactElement {
   return (
     <S.Container container alignItems="flex-start" justifyContent="center">
-      <Grid item sm={6}>
+      <Grid item xl={6} sm={5}>
         <MotionBox delay={0.3}>
-          <Typography variant="h4" fontWeight={700} align="center">
+          <Typography
+            variant="h4"
+            fontWeight={700}
+            align="center"
+            margin=" 0 0 30px"
+          >
             {technicalSKills.title}
           </Typography>
           {technicalSKills.skills.map((skill) => (
@@ -47,9 +52,14 @@ function Skills({
           ))}
         </MotionBox>
       </Grid>
-      <S.ProfessionalSkillsWrapper item sm={6}>
+      <S.ProfessionalSkillsWrapper item xl={6} sm={7}>
         <MotionBox delay={0.5}>
-          <Typography variant="h4" fontWeight={700} align="center">
+          <Typography
+            variant="h4"
+            fontWeight={700}
+            align="center"
+            margin=" 0 0 30px"
+          >
             {professionalSkills.title}
           </Typography>
           {professionalSkills.skills.map((skill) => (
@@ -59,13 +69,14 @@ function Skills({
               direction="row"
               alignItems="center"
               justifyContent="center"
+              mb={1}
             >
               <Grid item sm={3}>
                 <CircularSkillbar percents={skill.percentage} />
               </Grid>
               <Grid item sm={9}>
                 <Typography>
-                  <b>{skill.caption}</b>:{skill.text}
+                  <b>{skill.caption}</b>: {skill.text}
                 </Typography>
               </Grid>
             </Grid>

@@ -21,7 +21,7 @@ function CircularSkillbar({
   counter = true,
   stroke = '#0bceaf',
   duration = 0.8,
-  size = 100,
+  size = 80,
   strokeWidth = 7,
 }: CircularSkillbarProps): ReactElement {
   const theme = useTheme()
@@ -46,7 +46,7 @@ function CircularSkillbar({
   }
 
   return (
-    <Box height={size} width="fit-content" position="relative" marginTop={2}>
+    <Box height={size} width="fit-content" position="relative" margin="0 auto">
       <Circle size={size}>
         <circle
           cx="50"
@@ -82,7 +82,7 @@ function CircularSkillbar({
           justifyContent="center"
           style={{
             position: 'absolute',
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: 400,
             top: 0,
             left: 0,

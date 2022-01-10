@@ -125,4 +125,28 @@ export const layout = {
       ],
     },
   },
+  experiences: {
+    educations: {
+      title: 'Education',
+      experiences: [
+        {
+          id: 0,
+          title: 'Universidade do Mato Grosso do Sul (UEMS)',
+          duration: '2005-2008',
+          text: "Bachelor's degree in computer science",
+        },
+      ],
+    },
+    workExperiences: {
+      title: 'Work Experience',
+      experiences: [
+        {
+          id: 0,
+          title: 'Agile Content',
+          duration: '2005-2008',
+          text: 'Frontend developer responsible for maintenance and development of the Now online site.',
+        },
+      ],
+    },
+  },
 }
