@@ -24,11 +24,16 @@ export const layout = {
     socialMedia: [
       {
         id: 0,
+        icon: 'linkedin',
+        link: 'https://www.linkedin.com/in/bruno-y-tanaka/',
+      },
+      {
+        id: 1,
         icon: 'github',
         link: 'https://github.com/BrunoYTanaka',
       },
       {
-        id: 1,
+        id: 2,
         icon: 'twitter',
         link: 'https://twitter.com/BrunoYoichi',
       },

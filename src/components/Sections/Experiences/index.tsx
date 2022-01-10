@@ -1,5 +1,5 @@
+import { ReactElement } from 'react'
 import { Card } from '@/components/Card'
-import React, { ReactElement } from 'react'
 import * as S from './styles'
 import { MotionBox, Typography } from '@/components'
 

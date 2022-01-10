@@ -1,5 +1,5 @@
+import { ReactElement } from 'react'
 import Grid from '@mui/material/Grid'
-import React, { ReactElement } from 'react'
 import { Typography } from '..'
 import * as S from './styles'
 

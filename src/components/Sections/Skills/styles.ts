@@ -13,7 +13,7 @@ export const Container = styled(Grid)(({ theme }) => ({
   },
 }))
 
-export const ProfessionalSkillsWrapper = styled(Grid)(({ theme }) => ({
+export const RightWrapper = styled(Grid)(({ theme }) => ({
   paddingLeft: 50,
   [theme.breakpoints.down('sm')]: {
     paddingLeft: 0,

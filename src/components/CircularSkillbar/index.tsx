@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import Grid from '@mui/material/Grid'
 import { useTheme } from '@mui/material'
 import { Box } from '@mui/system'
 import { motion } from 'framer-motion'
-import Circle from './Circle'
+import { Circle } from './components/Circle'
 
 interface CircularSkillbarProps {
   percents?: number

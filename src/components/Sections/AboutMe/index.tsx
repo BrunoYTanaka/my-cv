@@ -1,8 +1,7 @@
+import { ReactElement } from 'react'
 import Grid from '@mui/material/Grid'
-import React from 'react'
 import Image from 'next/image'
-
-import { Container, InfoWrapper, Tools, ToolsItem, Button } from './styles'
+import * as S from './styles'
 import skillsImage from '../../../../public/skills.png'
 import { Typography } from '../../Typography'
 import { MotionBox } from '@/components'
@@ -18,15 +17,19 @@ interface AboutMeProps {
   tools: Tool[]
 }
 
-function AboutMe({ title, description, tools }: AboutMeProps) {
+function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
   return (
-    <Container container alignItems="flex-start" justifyContent="space-between">
+    <S.Container
+      container
+      alignItems="flex-start"
+      justifyContent="space-between"
+    >
       <Grid item sm={6} alignSelf="center">
         <MotionBox delay={0.4}>
           <Image alt="Skill Image" src={skillsImage} width={540} height={340} />
         </MotionBox>
       </Grid>
-      <InfoWrapper item sm={6}>
+      <S.RightWrapper item sm={6}>
         <MotionBox delay={0.1}>
           <Typography margin="10px 0" fontWeight={700} variant="h3">
             {title}
@@ -38,17 +41,17 @@ function AboutMe({ title, description, tools }: AboutMeProps) {
           </Typography>
         </MotionBox>
         <MotionBox delay={0.3}>
-          <Tools>
+          <S.Tools>
             {tools.map((tool) => (
-              <ToolsItem key={tool.id}>{tool.name}</ToolsItem>
+              <S.ToolsItem key={tool.id}>{tool.name}</S.ToolsItem>
             ))}
-          </Tools>
+          </S.Tools>
         </MotionBox>
         <MotionBox delay={0.4}>
-          <Button variant="outlined">Download CV</Button>
+          <S.Button variant="outlined">Download CV</S.Button>
         </MotionBox>
-      </InfoWrapper>
-    </Container>
+      </S.RightWrapper>
+    </S.Container>
   )
 }
 

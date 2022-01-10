@@ -1,16 +1,11 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 import Grid from '@mui/material/Grid'
 
 import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
 import { Typography } from '../../Typography'
 import { List, ListItem, ListItemButton, MotionBox } from '@/components'
-import EmailIcon from '@mui/icons-material/Email'
-import PhoneIcon from '@mui/icons-material/Phone'
-import LocationOnIcon from '@mui/icons-material/LocationOn'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import TwitterIcon from '@mui/icons-material/Twitter'
-import { SvgIconComponent } from '@mui/icons-material'
+import { icons } from '@/constants/icons'
 interface ContactData {
   id: number
   icon: string
@@ -40,14 +35,6 @@ function Contact({
   contacts,
   socialMedia,
 }: ContactProps): ReactElement {
-  const icons: { [name: string]: SvgIconComponent } = {
-    github: GitHubIcon,
-    email: EmailIcon,
-    phone: PhoneIcon,
-    location: LocationOnIcon,
-    twitter: TwitterIcon,
-  }
-
   return (
     <Container container justifyContent="center" alignItems="center">
       <Grid item sm={6}>

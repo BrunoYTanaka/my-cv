@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import Grid from '@mui/material/Grid'
 import * as S from './styles'
 import { Typography } from '../../Typography'
@@ -52,7 +52,7 @@ function Skills({
           ))}
         </MotionBox>
       </Grid>
-      <S.ProfessionalSkillsWrapper item xl={6} sm={7}>
+      <S.RightWrapper item xl={6} sm={7}>
         <MotionBox delay={0.5}>
           <Typography
             variant="h4"
@@ -82,7 +82,7 @@ function Skills({
             </Grid>
           ))}
         </MotionBox>
-      </S.ProfessionalSkillsWrapper>
+      </S.RightWrapper>
     </S.Container>
   )
 }

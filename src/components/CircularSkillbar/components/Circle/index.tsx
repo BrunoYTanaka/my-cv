@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
+
 interface CirleProps {
   size: number
   children: React.ReactNode
@@ -31,4 +32,4 @@ function Circle({
   )
 }
 
-export default Circle
+export { Circle }

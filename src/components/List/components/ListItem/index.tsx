@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import * as S from './styles'
 
 interface ListItemProps {
@@ -5,7 +6,7 @@ interface ListItemProps {
   text?: string
 }
 
-function ListItem({ icon, text }: ListItemProps) {
+function ListItem({ icon, text }: ListItemProps): ReactElement {
   return (
     <S.ListItem>
       <S.ListItemIcon>{icon}</S.ListItemIcon>
