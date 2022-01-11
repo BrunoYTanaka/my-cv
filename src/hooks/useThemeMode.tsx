@@ -1,6 +1,5 @@
 import React from 'react'
 import { createTheme, ThemeOptions } from '@mui/material/styles'
-import { purple } from '@mui/material/colors'
 
 interface ThemeModeContextData {
   theme: ThemeOptions

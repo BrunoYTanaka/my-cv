@@ -26,7 +26,12 @@ function Experiences({
   workExperiences,
 }: ExperiencesProps): ReactElement {
   return (
-    <S.Container container justifyContent="center" alignItems="flex-start">
+    <S.Container
+      container
+      justifyContent="center"
+      alignItems="flex-start"
+      id="experiences"
+    >
       <S.LeftWrapper item sm={6}>
         <MotionBox delay={0.1}>
           <Typography

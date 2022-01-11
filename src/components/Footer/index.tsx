@@ -18,7 +18,6 @@ function Footer(): ReactElement {
         <List direction="row" gap={20} mt={0} mb={0}>
           {socialMedia.map((media) => {
             const Icon = icons[media.icon]
-            console.log(Icon)
             return (
               <ListItemButton
                 key={media.id}

@@ -3,7 +3,6 @@ import { AppProps } from 'next/app'
 import CssBaseline from '@mui/material/CssBaseline'
 import { DefaultLayout } from '@/layout/defaultLayout'
 import { ThemeModeContextProvider } from '@/hooks/useThemeMode'
-import 'react-circular-progressbar/dist/styles.css'
 // http://cvresumetemplate.com/maha-personal-cv-resume-html-template/home-two.html
 
 export default function MyApp({ Component, pageProps }: AppProps) {

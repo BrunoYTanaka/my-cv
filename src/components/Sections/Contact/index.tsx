@@ -36,7 +36,7 @@ function Contact({
   socialMedia,
 }: ContactProps): ReactElement {
   return (
-    <Container container justifyContent="center" alignItems="center">
+    <Container id="home" container justifyContent="center" alignItems="center">
       <Grid item sm={6}>
         <MotionBox delay={0.1}>
           <GreetingText variant="body1">{greetings}</GreetingText>

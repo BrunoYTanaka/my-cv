@@ -16,6 +16,6 @@ export const Card = styled('div')(({ theme }) => ({
   marginBottom: '30px',
   backgroundColor: backgroundColor[theme.palette.mode],
   [theme.breakpoints.down('sm')]: {
-    minWidth: '0',
+    minWidth: 0,
   },
 }))

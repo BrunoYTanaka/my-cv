@@ -23,6 +23,7 @@ function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
       container
       alignItems="flex-start"
       justifyContent="space-between"
+      id="about"
     >
       <Grid item sm={6} alignSelf="center">
         <MotionBox delay={0.4}>

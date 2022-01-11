@@ -32,7 +32,12 @@ function Skills({
   professionalSkills,
 }: SkillsProps): ReactElement {
   return (
-    <S.Container container alignItems="flex-start" justifyContent="center">
+    <S.Container
+      container
+      alignItems="flex-start"
+      justifyContent="center"
+      id="skills"
+    >
       <Grid item xl={6} sm={5}>
         <MotionBox delay={0.3}>
           <Typography
