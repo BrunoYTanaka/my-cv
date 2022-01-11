@@ -1,8 +1,5 @@
 import { styled } from '@mui/material/styles'
 
-interface AnchorProps {
-  isActive: boolean
-}
 interface SidebarProps {
   isOpen: boolean
 }
@@ -25,19 +22,4 @@ export const SidebarWrapper = styled('nav')(() => ({
   justifyContent: 'flex-start',
   marginTop: '4rem',
   gap: 10,
-}))
-
-export const Anchor = styled('a')<AnchorProps>(({ theme, isActive }) => ({
-  textDecoration: 'none',
-  color: theme.palette.text.primary,
-  fontSize: 18,
-  lineHeight: '30px',
-  fontWeight: 700,
-  cursor: 'pointer',
-  paddingBottom: 8,
-  transition: 'all ease-in-out .2s',
-  textTransform: 'capitalize',
-  borderBottom: `1px solid ${
-    isActive ? theme.palette.common.white : 'transparent'
-  }`,
 }))

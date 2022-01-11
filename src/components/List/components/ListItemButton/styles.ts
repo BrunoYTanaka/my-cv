@@ -9,7 +9,7 @@ export const ListItemIcon = styled(MuiListItemIcon)({
   transition: 'all ease-in-out .2s',
 })
 
-export const ListItemButton = styled(MuiListItemButton)({
+export const ListItemButton = styled(MuiListItemButton)(({ theme }) => ({
   display: 'flex',
   padding: 0,
   flexGrow: 0,
@@ -20,7 +20,7 @@ export const ListItemButton = styled(MuiListItemButton)({
   cursor: 'pointer',
   '&:hover': {
     [`${ListItemIcon}`]: {
-      color: '#0bceaf',
+      color: theme.palette.secondary.main,
     },
   },
-})
+}))

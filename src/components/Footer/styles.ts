@@ -7,5 +7,5 @@ export const Footer = styled('footer')(({ theme }) => ({
   width: '100%',
   height: 80,
   backgroundColor:
-    theme.palette.mode === 'light' ? theme.palette.grey[200] : '#212121',
+    theme.palette.mode === 'light' ? theme.palette.grey[300] : '#212121',
 }))

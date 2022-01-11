@@ -9,11 +9,11 @@ export const Skillbar = styled('div')(({ theme }) => ({
   borderRadius: '0.625rem',
 }))
 
-export const SkillbarProgress = styled(motion.span)(() => ({
+export const SkillbarProgress = styled(motion.span)(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
-  backgroundColor: '#0bceaf',
+  backgroundColor: theme.palette.secondary.main,
   height: '0.5rem',
   borderRadius: '0.625rem',
 }))

@@ -31,9 +31,9 @@ export const Tools = styled('ul')(({ theme }) => ({
   },
 }))
 
-export const ToolsItem = styled('li')(() => ({
+export const ToolsItem = styled('li')(({ theme }) => ({
   listStyle: 'none',
-  border: '2px solid #0bceaf',
+  border: `2px solid ${theme.palette.secondary.main}`,
   borderRadius: 8,
   padding: 5,
   fontSize: 14,
@@ -46,12 +46,12 @@ export const Button = styled(MuiButton)<ButtonProps>(({ theme }) => ({
   marginTop: 20,
   padding: '10px 15px',
   borderRadius: 24,
-  borderColor: '#0bceaf',
+  borderColor: theme.palette.secondary.main,
   borderWidth: 2,
   fontWeight: 700,
   color: theme.palette.text.primary,
   '&:hover': {
     borderWidth: 2,
-    borderColor: '#089a83',
+    borderColor: theme.palette.secondary.dark,
   },
 }))

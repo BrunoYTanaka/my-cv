@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 import * as S from './styles'
 import NextLink from 'next/link'
 import { useMenuContext } from '@/hooks/useMenu'
+import { Anchor } from '..'
 
 function Sidebar(): ReactElement {
   const [currentIndex, setCurrentIndex] = React.useState(0)
@@ -33,13 +34,13 @@ function Sidebar(): ReactElement {
     <S.Sidebar isOpen={isMenuOpen} ref={sidebarRef}>
       <S.SidebarWrapper>
         {['home', 'about', 'skills', 'experiences'].map((item, index) => (
-          <NextLink href={`/#${item}`} key={item}>
-            <S.Anchor
+          <NextLink href={`/#${item}`} key={item} passHref>
+            <Anchor
               isActive={currentIndex === index}
               onClick={() => handleClick(index)}
             >
               {item}
-            </S.Anchor>
+            </Anchor>
           </NextLink>
         ))}
       </S.SidebarWrapper>

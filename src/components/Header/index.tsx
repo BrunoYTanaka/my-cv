@@ -6,6 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import { useMenuContext } from '@/hooks/useMenu'
+import { Anchor } from '../Anchor'
 
 function Header(): ReactElement {
   const [currentIndex, setCurrentIndex] = React.useState(0)
@@ -27,12 +28,12 @@ function Header(): ReactElement {
         ) : (
           ['home', 'about', 'skills', 'experiences'].map((item, index) => (
             <NextLink href={`/#${item}`} key={item}>
-              <S.Anchor
+              <Anchor
                 isActive={currentIndex === index}
                 onClick={() => handleClick(index)}
               >
                 {item}
-              </S.Anchor>
+              </Anchor>
             </NextLink>
           ))
         )}

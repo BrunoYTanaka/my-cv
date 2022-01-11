@@ -8,7 +8,6 @@ import { Circle } from './components/Circle'
 interface CircularSkillbarProps {
   percents?: number
   counter?: boolean
-  stroke?: string
   emptyStroke?: string
   emptyStrokeOpacity?: number
   duration?: number
@@ -19,7 +18,6 @@ interface CircularSkillbarProps {
 function CircularSkillbar({
   percents = 50,
   counter = true,
-  stroke = '#0bceaf',
   duration = 0.8,
   size = 80,
   strokeWidth = 7,
@@ -64,7 +62,7 @@ function CircularSkillbar({
           cy="50"
           r={radius}
           strokeWidth={strokeWidth}
-          stroke={stroke}
+          stroke={theme.palette.secondary.main}
           fill="transparent"
           strokeDashoffset={fillPercents}
           strokeDasharray={circumference}
