@@ -12,10 +12,13 @@ export const HeaderWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '1.25rem 0',
+  padding: '1.25rem',
   width: '100%',
-  maxWidth: '80%',
+  maxWidth: 1140,
   margin: '0 auto',
+  [theme.breakpoints.down('xl')]: {
+    maxWidth: 900,
+  },
   [theme.breakpoints.down('sm')]: {
     maxWidth: 'none',
     padding: '1.25rem',

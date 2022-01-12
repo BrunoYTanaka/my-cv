@@ -33,7 +33,7 @@ function Sidebar(): ReactElement {
   }, [isMenuOpen, handleOpenMenu])
 
   return (
-    <S.Sidebar isOpen={isMenuOpen} ref={sidebarRef}>
+    <S.Sidebar open={isMenuOpen} ref={sidebarRef}>
       <Box textAlign="end">
         <IconButton onClick={handleOpenMenu}>
           <CloseIcon />

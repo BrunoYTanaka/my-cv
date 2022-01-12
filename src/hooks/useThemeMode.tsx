@@ -13,14 +13,27 @@ interface ThemeModeContextProviderProps {
   children: React.ReactNode
 }
 
+type Mode = 'light' | 'dark'
+
 export function ThemeModeContextProvider({
   children,
 }: ThemeModeContextProviderProps) {
-  const [mode, setMode] = React.useState<'dark' | 'light'>('dark')
+  const [mode, setMode] = React.useState<Mode>('dark')
 
   const toggleThemeMode = React.useCallback(() => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
   }, [])
+
+  React.useEffect(() => {
+    const themeLS = localStorage.getItem('@theme')
+    if (themeLS) {
+      setMode(themeLS as Mode)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    localStorage.setItem('@theme', mode)
+  }, [mode])
 
   const theme = React.useMemo(
     () =>
@@ -30,7 +43,7 @@ export function ThemeModeContextProvider({
           primary: purple,
           ...(mode === 'light'
             ? {
-                neutral: '#fff',
+                neutral: grey[300],
               }
             : {
                 neutral: '#212121',

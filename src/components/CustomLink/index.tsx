@@ -12,7 +12,7 @@ interface AnchorProps {
 function CustomLink({ children, isActive, href, onClick }: AnchorProps) {
   return (
     <NextLink href={href}>
-      <S.Anchor isActive={isActive} onClick={onClick}>
+      <S.Anchor active={isActive} onClick={onClick}>
         {children}
       </S.Anchor>
     </NextLink>

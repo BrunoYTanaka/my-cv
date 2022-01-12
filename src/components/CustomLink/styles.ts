@@ -1,10 +1,10 @@
 import { styled } from '@mui/material/styles'
 
 interface AnchorProps {
-  isActive: boolean
+  active: boolean
 }
 
-export const Anchor = styled('a')<AnchorProps>(({ theme, isActive }) => ({
+export const Anchor = styled('a')<AnchorProps>(({ theme, active }) => ({
   textDecoration: 'none',
   color: theme.palette.text.primary,
   fontSize: 18,
@@ -15,7 +15,7 @@ export const Anchor = styled('a')<AnchorProps>(({ theme, isActive }) => ({
   transition: 'all ease-in-out .2s',
   textTransform: 'capitalize',
   borderBottom: `1px solid ${
-    isActive ? theme.palette.text.primary : 'transparent'
+    active ? theme.palette.text.primary : 'transparent'
   }`,
   '&:hover': {
     color: theme.palette.primary.main,
