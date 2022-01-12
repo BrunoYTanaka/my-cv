@@ -136,7 +136,7 @@ export const layout = {
       experiences: [
         {
           id: 0,
-          title: 'Universidade do Mato Grosso do Sul (UEMS)',
+          title: 'Universidade Estadual de Mato Grosso do Sul (UEMS)',
           duration: '2014-2018',
           text: "Bachelor's degree in computer science",
         },
