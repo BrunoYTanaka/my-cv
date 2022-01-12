@@ -62,7 +62,7 @@ function CircularSkillbar({
           cy="50"
           r={radius}
           strokeWidth={strokeWidth}
-          stroke={theme.palette.secondary.main}
+          stroke={theme.palette.primary.main}
           fill="transparent"
           strokeDashoffset={fillPercents}
           strokeDasharray={circumference}

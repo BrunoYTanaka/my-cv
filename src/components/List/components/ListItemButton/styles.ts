@@ -20,7 +20,7 @@ export const ListItemButton = styled(MuiListItemButton)(({ theme }) => ({
   cursor: 'pointer',
   '&:hover': {
     [`${ListItemIcon}`]: {
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
     },
   },
 }))

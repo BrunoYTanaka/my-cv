@@ -155,3 +155,26 @@ export const layout = {
     },
   },
 }
+
+export const links = [
+  {
+    id: 0,
+    text: 'home',
+    link: '/#home',
+  },
+  {
+    id: 1,
+    text: 'about',
+    link: '/#about',
+  },
+  {
+    id: 2,
+    text: 'skills',
+    link: '/#skills',
+  },
+  {
+    id: 3,
+    text: 'experiences',
+    link: '/#experiences',
+  },
+]

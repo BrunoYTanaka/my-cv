@@ -20,7 +20,7 @@ function Card({ title, duration, text }: CardProps): ReactElement {
         <Typography
           variant="subtitle1"
           margin="10px 0"
-          color={theme.palette.secondary.main}
+          color={theme.palette.primary.main}
         >
           {duration}
         </Typography>

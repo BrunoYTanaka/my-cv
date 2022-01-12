@@ -16,7 +16,7 @@ export const Container = styled(Grid)(({ theme }) => ({
 
 export const GreetingText = styled(MuiTypography)(({ theme }) => ({
   display: 'inline-block',
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: theme.palette.primary.main,
   padding: '10px 30px',
   fontWeight: 'bold',
   borderTopLeftRadius: 20,
@@ -29,17 +29,13 @@ export const GreetingText = styled(MuiTypography)(({ theme }) => ({
 export const AvatarContainer = styled('div')(({ theme }) => ({
   position: 'relative',
   display: 'block',
-  border: `20px solid ${
-    theme.palette.mode === 'light'
-      ? theme.palette.grey[200]
-      : 'rgba(0, 0, 0, 0.9)'
-  }`,
+  border: `20px solid ${theme.palette.neutral}`,
   borderRadius: '50%',
   margin: '0 auto',
   width: 360,
   height: 360,
 
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     margin: '30px 0',
     width: 240,
     height: 240,

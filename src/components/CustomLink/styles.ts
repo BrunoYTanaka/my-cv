@@ -18,6 +18,6 @@ export const Anchor = styled('a')<AnchorProps>(({ theme, isActive }) => ({
     isActive ? theme.palette.text.primary : 'transparent'
   }`,
   '&:hover': {
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   },
 }))

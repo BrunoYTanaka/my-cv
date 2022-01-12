@@ -1,6 +1,6 @@
 import React from 'react'
 import { createTheme, ThemeOptions } from '@mui/material/styles'
-import { purple } from '@mui/material/colors'
+import { grey, purple } from '@mui/material/colors'
 
 interface ThemeModeContextData {
   theme: ThemeOptions
@@ -27,7 +27,14 @@ export function ThemeModeContextProvider({
       createTheme({
         palette: {
           mode,
-          secondary: purple,
+          primary: purple,
+          ...(mode === 'light'
+            ? {
+                neutral: '#fff',
+              }
+            : {
+                neutral: '#212121',
+              }),
         },
       }),
     [mode],

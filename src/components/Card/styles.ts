@@ -1,9 +1,5 @@
 import { styled } from '@mui/material/styles'
 
-const backgroundColor = {
-  dark: '#212121',
-  light: '#fff',
-}
 const boxShadowColor = {
   dark: '#000',
   light: '#00000015',
@@ -14,7 +10,7 @@ export const Card = styled('div')(({ theme }) => ({
   padding: '26px 30px',
   borderRadius: 4,
   marginBottom: '30px',
-  backgroundColor: backgroundColor[theme.palette.mode],
+  backgroundColor: theme.palette.neutral,
   [theme.breakpoints.down('sm')]: {
     minWidth: 0,
   },

@@ -1,8 +1,10 @@
 import React, { ReactElement } from 'react'
 import * as S from './styles'
-import NextLink from 'next/link'
 import { useMenuContext } from '@/hooks/useMenu'
-import { Anchor } from '..'
+import { CustomLink } from '..'
+import { Box, IconButton } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
+import { links } from '@/config'
 
 function Sidebar(): ReactElement {
   const [currentIndex, setCurrentIndex] = React.useState(0)
@@ -32,16 +34,21 @@ function Sidebar(): ReactElement {
 
   return (
     <S.Sidebar isOpen={isMenuOpen} ref={sidebarRef}>
+      <Box textAlign="end">
+        <IconButton onClick={handleOpenMenu}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
       <S.SidebarWrapper>
-        {['home', 'about', 'skills', 'experiences'].map((item, index) => (
-          <NextLink href={`/#${item}`} key={item} passHref>
-            <Anchor
-              isActive={currentIndex === index}
-              onClick={() => handleClick(index)}
-            >
-              {item}
-            </Anchor>
-          </NextLink>
+        {links.map((item, index) => (
+          <CustomLink
+            href={item.link}
+            key={item.id}
+            isActive={currentIndex === index}
+            onClick={() => handleClick(index)}
+          >
+            {item.text}
+          </CustomLink>
         ))}
       </S.SidebarWrapper>
     </S.Sidebar>

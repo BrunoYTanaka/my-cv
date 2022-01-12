@@ -6,6 +6,5 @@ export const Footer = styled('footer')(({ theme }) => ({
   justifyContent: 'space-evenly',
   width: '100%',
   height: 80,
-  backgroundColor:
-    theme.palette.mode === 'light' ? theme.palette.grey[300] : '#212121',
+  backgroundColor: theme.palette.neutral,
 }))

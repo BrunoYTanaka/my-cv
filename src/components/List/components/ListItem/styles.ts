@@ -31,7 +31,7 @@ export const ListItem = styled(MuiListItem)(({ theme }) => ({
       color: theme.palette.text.secondary,
     },
     [`${ListItemIcon}`]: {
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
     },
   },
 }))
