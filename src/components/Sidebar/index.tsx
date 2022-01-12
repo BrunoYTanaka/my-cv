@@ -42,7 +42,7 @@ function Sidebar(): ReactElement {
       <S.SidebarWrapper>
         {links.map((item, index) => (
           <CustomLink
-            href={item.link}
+            to={item.to}
             key={item.id}
             isActive={currentIndex === index}
             onClick={() => handleClick(index)}

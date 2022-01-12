@@ -31,13 +31,13 @@ function Header(): ReactElement {
       <S.HeaderWrapper>
         <S.LinkWrapper>
           {isMobileScreen ? (
-            <IconButton>
-              <MenuIcon onClick={handleOpenMenu} />
+            <IconButton onClick={handleOpenMenu}>
+              <MenuIcon />
             </IconButton>
           ) : (
             links.map((item, index) => (
               <CustomLink
-                href={item.link}
+                to={item.to}
                 key={item.id}
                 isActive={currentIndex === index}
                 onClick={() => handleClick(index)}

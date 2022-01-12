@@ -1,10 +1,7 @@
 import { styled } from '@mui/material/styles'
+import { Link } from 'react-scroll'
 
-interface AnchorProps {
-  active: boolean
-}
-
-export const Anchor = styled('a')<AnchorProps>(({ theme, active }) => ({
+export const Anchor = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.text.primary,
   fontSize: 18,
@@ -14,10 +11,12 @@ export const Anchor = styled('a')<AnchorProps>(({ theme, active }) => ({
   paddingBottom: 8,
   transition: 'all ease-in-out .2s',
   textTransform: 'capitalize',
-  borderBottom: `1px solid ${
-    active ? theme.palette.text.primary : 'transparent'
-  }`,
+
   '&:hover': {
     color: theme.palette.primary.main,
+  },
+
+  '&.active': {
+    borderBottom: `1px solid ${theme.palette.text.primary}`,
   },
 }))

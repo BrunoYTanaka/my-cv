@@ -5,7 +5,6 @@ import * as S from './styles'
 import skillsImage from '../../../../public/skills.png'
 import { Typography } from '../../Typography'
 import { MotionBox } from '@/components'
-
 interface Tool {
   id: number
   name: string

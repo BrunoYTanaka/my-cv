@@ -1,21 +1,25 @@
 import React from 'react'
-import NextLink from 'next/link'
 import * as S from './styles'
 
 interface AnchorProps {
   children: React.ReactNode
   isActive: boolean
-  href: string
+  to: string
   onClick?: () => void
 }
 
-function CustomLink({ children, isActive, href, onClick }: AnchorProps) {
+function CustomLink({ children, to, onClick }: AnchorProps) {
   return (
-    <NextLink href={href}>
-      <S.Anchor active={isActive} onClick={onClick}>
-        {children}
-      </S.Anchor>
-    </NextLink>
+    <S.Anchor
+      onClick={onClick}
+      to={to}
+      smooth={true}
+      duration={500}
+      offset={-120}
+      spy={true}
+    >
+      {children}
+    </S.Anchor>
   )
 }
 

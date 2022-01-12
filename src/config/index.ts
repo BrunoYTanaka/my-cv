@@ -137,7 +137,7 @@ export const layout = {
         {
           id: 0,
           title: 'Universidade do Mato Grosso do Sul (UEMS)',
-          duration: '2005-2008',
+          duration: '2014-2018',
           text: "Bachelor's degree in computer science",
         },
       ],
@@ -148,8 +148,14 @@ export const layout = {
         {
           id: 0,
           title: 'Agile Content',
-          duration: '2005-2008',
+          duration: '2021-present',
           text: 'Frontend developer responsible for maintenance and development of the Now online site.',
+        },
+        {
+          id: 1,
+          title: 'E-deploy',
+          duration: '2019-2021',
+          text: 'Frontend developer responsible for maintenance and development alot sites like, Burger King, Natura, Pax Primavera, etc.',
         },
       ],
     },
@@ -160,21 +166,21 @@ export const links = [
   {
     id: 0,
     text: 'home',
-    link: '/#home',
+    to: 'home',
   },
   {
     id: 1,
     text: 'about',
-    link: '/#about',
+    to: 'about',
   },
   {
     id: 2,
     text: 'skills',
-    link: '/#skills',
+    to: 'skills',
   },
   {
     id: 3,
     text: 'experiences',
-    link: '/#experiences',
+    to: 'experiences',
   },
 ]
