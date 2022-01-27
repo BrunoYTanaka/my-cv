@@ -4,7 +4,7 @@ export const Header = styled('header')(({ theme }) => ({
   position: 'sticky',
   top: 0,
   zIndex: 1,
-  height: 80,
+  height: '5rem', //80px
   backgroundColor: theme.palette.neutral,
 }))
 
@@ -29,5 +29,5 @@ export const LinkWrapper = styled('div')(() => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: 50,
+  gap: '3.125rem', //50px
 }))

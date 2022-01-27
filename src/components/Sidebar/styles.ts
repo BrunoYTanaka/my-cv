@@ -20,5 +20,5 @@ export const SidebarWrapper = styled('nav')(() => ({
   flexDirection: 'column',
   justifyContent: 'flex-start',
   marginTop: '4rem',
-  gap: 10,
+  gap: '0.625rem', //10px
 }))

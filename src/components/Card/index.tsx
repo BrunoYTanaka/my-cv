@@ -14,17 +14,18 @@ function Card({ title, duration, text }: CardProps): ReactElement {
   return (
     <MotionBox>
       <S.Card>
-        <Typography variant="h5" margin="0 0 8px" fontWeight={700}>
+        <Typography variant="h5" mb={1} fontWeight={700}>
           {title}
         </Typography>
         <Typography
           variant="subtitle1"
-          margin="10px 0"
+          mt={1.25}
+          mb={1.25}
           color={theme.palette.primary.main}
         >
           {duration}
         </Typography>
-        <Typography margin="0">{text}</Typography>
+        <Typography m={0}>{text}</Typography>
       </S.Card>
     </MotionBox>
   )

@@ -27,10 +27,10 @@ function Skillbar({ name, percentage }: SkillbarProps): ReactElement {
       <Grid item sm={12} style={{ width: '100%' }}>
         <Grid container justifyContent="space-between">
           <Grid item sm={6}>
-            <Typography margin="0">{name}</Typography>
+            <Typography m={0}>{name}</Typography>
           </Grid>
           <Grid item sm={6}>
-            <Typography margin="0" align="right">
+            <Typography m={0} align="right">
               {`${percentage}%`}
             </Typography>
           </Grid>

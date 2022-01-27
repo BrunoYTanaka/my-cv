@@ -110,21 +110,18 @@ export const layout = {
       skills: [
         {
           id: 0,
-          caption: 'Team Work',
-          text: "I love working in a team, I'm not afraid to ask or answer questions from other people on the team.",
+          name: 'Team Work',
           percentage: 90,
         },
         {
           id: 1,
-          caption: 'Responsability',
-          text: 'I know my responsibilities and I will try my best not to disappoint.',
+          name: 'Responsability',
           percentage: 87,
         },
 
         {
           id: 2,
-          caption: 'Communication',
-          text: "I'm not afraid to ask when I have doubts and anyway if you need help I'm always willing to help",
+          name: 'Communication',
           percentage: 75,
         },
       ],

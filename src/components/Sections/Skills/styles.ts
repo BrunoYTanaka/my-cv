@@ -3,19 +3,26 @@ import { styled } from '@mui/material/styles'
 
 export const Container = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
-  paddingBottom: 180,
+  paddingBottom: '11.25rem', // 180px,
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column-reverse',
     alignItems: 'center',
     maxWidth: 'none',
-    paddingBottom: 60,
+    paddingBottom: '3.75rem', //60px
     textAlign: 'center',
   },
 }))
 
-export const RightWrapper = styled(Grid)(({ theme }) => ({
-  paddingLeft: 50,
+export const LeftWrapper = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
+    width: '90%',
+  },
+}))
+
+export const RightWrapper = styled(Grid)(({ theme }) => ({
+  paddingLeft: '3.125rem', //50px
+  [theme.breakpoints.down('sm')]: {
+    width: '90%',
     paddingLeft: 0,
     marginBottom: '4rem',
   },

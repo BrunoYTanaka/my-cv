@@ -5,6 +5,6 @@ export const Footer = styled('footer')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-evenly',
   width: '100%',
-  height: 80,
+  height: '5rem', //80px
   backgroundColor: theme.palette.neutral,
 }))

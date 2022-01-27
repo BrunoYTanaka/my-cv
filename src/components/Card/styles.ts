@@ -7,9 +7,9 @@ const boxShadowColor = {
 
 export const Card = styled('div')(({ theme }) => ({
   boxShadow: `0px 10px 20px 4px ${boxShadowColor[theme.palette.mode]}`,
-  padding: '26px 30px',
+  padding: '1.625rem 1.875rem', //26px 30px
   borderRadius: 4,
-  marginBottom: '30px',
+  marginBottom: '1.875rem', //30px
   backgroundColor: theme.palette.neutral,
   [theme.breakpoints.down('sm')]: {
     minWidth: 0,

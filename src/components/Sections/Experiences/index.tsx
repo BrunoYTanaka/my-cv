@@ -34,12 +34,7 @@ function Experiences({
     >
       <S.LeftWrapper item sm={6}>
         <MotionBox delay={0.1}>
-          <Typography
-            variant="h4"
-            fontWeight={700}
-            align="center"
-            margin="0 0 30px"
-          >
+          <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
             {educations.title}
           </Typography>
         </MotionBox>
@@ -49,12 +44,7 @@ function Experiences({
       </S.LeftWrapper>
       <S.RightWrapper item sm={6}>
         <MotionBox delay={0.1}>
-          <Typography
-            variant="h4"
-            fontWeight={700}
-            align="center"
-            margin="0 0 30px"
-          >
+          <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
             {workExperiences.title}
           </Typography>
         </MotionBox>

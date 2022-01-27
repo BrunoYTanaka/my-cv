@@ -23,7 +23,7 @@ export const ListItem = styled(MuiListItem)(({ theme }) => ({
   display: 'flex',
   padding: 0,
   alignItems: 'center',
-  gap: 15,
+  gap: '1rem',
   width: 'fit-content',
   cursor: 'pointer',
   '&:hover': {

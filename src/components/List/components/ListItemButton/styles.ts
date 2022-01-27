@@ -15,7 +15,7 @@ export const ListItemButton = styled(MuiListItemButton)(({ theme }) => ({
   flexGrow: 0,
   borderRadius: '50%',
   alignItems: 'center',
-  gap: 15,
+  gap: '1rem',
   width: 'fit-content',
   cursor: 'pointer',
   '&:hover': {

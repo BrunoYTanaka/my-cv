@@ -42,12 +42,12 @@ function Contact({
           <GreetingText variant="body1">{greetings}</GreetingText>
         </MotionBox>
         <MotionBox delay={0.2}>
-          <Typography margin="10px 0" variant="h4">
+          <Typography mt={1.25} mb={1.25} variant="h4">
             {name}
           </Typography>
         </MotionBox>
         <MotionBox delay={0.3}>
-          <Typography margin="10px 0 30px" variant="h5">
+          <Typography mt={1} mb={3.75} variant="h5">
             {job}
           </Typography>
         </MotionBox>

@@ -4,11 +4,11 @@ import { Link } from 'react-scroll'
 export const Anchor = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.text.primary,
-  fontSize: 18,
-  lineHeight: '30px',
+  fontSize: '1.125rem', //18px
+  lineHeight: '1.875rem', //30px
   fontWeight: 700,
   cursor: 'pointer',
-  paddingBottom: 8,
+  paddingBottom: '0.5rem', //8px
   transition: 'all ease-in-out .2s',
   textTransform: 'capitalize',
 
