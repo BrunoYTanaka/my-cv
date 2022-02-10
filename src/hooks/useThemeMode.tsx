@@ -44,9 +44,11 @@ export function ThemeModeContextProvider({
           ...(mode === 'light'
             ? {
                 neutral: grey[300],
+                progressBar: '#8c8c8c',
               }
             : {
                 neutral: '#212121',
+                progressBar: grey[500],
               }),
         },
       }),

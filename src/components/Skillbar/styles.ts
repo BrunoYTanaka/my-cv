@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export const Skillbar = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  backgroundColor: theme.palette.text.primary,
+  backgroundColor: theme.palette.progressBar,
   height: '0.5rem',
   borderRadius: '0.625rem',
 }))
