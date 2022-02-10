@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import * as S from './styles'
 import { Typography } from '../../Typography'
-import { Skillbar, MotionBox } from '@/components'
+import { Skillbar } from '@/components'
 
 interface Skill {
   id: number
@@ -32,32 +32,28 @@ function Skills({
       id="skills"
     >
       <S.LeftWrapper item sm={6}>
-        <MotionBox delay={0.3}>
-          <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
-            {technicalSKills.title}
-          </Typography>
-          {technicalSKills.skills.map((skill) => (
-            <Skillbar
-              key={skill.id}
-              name={skill.name}
-              percentage={skill.percentage}
-            />
-          ))}
-        </MotionBox>
+        <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
+          {technicalSKills.title}
+        </Typography>
+        {technicalSKills.skills.map((skill) => (
+          <Skillbar
+            key={skill.id}
+            name={skill.name}
+            percentage={skill.percentage}
+          />
+        ))}
       </S.LeftWrapper>
       <S.RightWrapper item sm={6}>
-        <MotionBox delay={0.5}>
-          <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
-            {professionalSkills.title}
-          </Typography>
-          {professionalSkills.skills.map((skill) => (
-            <Skillbar
-              key={skill.id}
-              name={skill.name}
-              percentage={skill.percentage}
-            />
-          ))}
-        </MotionBox>
+        <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
+          {professionalSkills.title}
+        </Typography>
+        {professionalSkills.skills.map((skill) => (
+          <Skillbar
+            key={skill.id}
+            name={skill.name}
+            percentage={skill.percentage}
+          />
+        ))}
       </S.RightWrapper>
     </S.Container>
   )

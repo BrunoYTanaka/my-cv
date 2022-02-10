@@ -33,21 +33,31 @@ function Experiences({
       id="experiences"
     >
       <S.LeftWrapper item sm={6}>
-        <MotionBox delay={0.1}>
-          <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
-            {educations.title}
-          </Typography>
-        </MotionBox>
+        <Typography
+          delay={0.1}
+          variant="h4"
+          fontWeight={700}
+          align="center"
+          mb={3.75}
+        >
+          {educations.title}
+        </Typography>
+
         {educations.experiences.map((experience) => (
           <Card key={experience.id} {...experience} />
         ))}
       </S.LeftWrapper>
       <S.RightWrapper item sm={6}>
-        <MotionBox delay={0.1}>
-          <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
-            {workExperiences.title}
-          </Typography>
-        </MotionBox>
+        <Typography
+          delay={0.1}
+          variant="h4"
+          fontWeight={700}
+          align="center"
+          mb={3.75}
+        >
+          {workExperiences.title}
+        </Typography>
+
         {workExperiences.experiences.map((experience) => (
           <Card key={experience.id} {...experience} />
         ))}

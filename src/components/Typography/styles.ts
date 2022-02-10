@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles'
 import MuiTypography from '@mui/material/Typography'
-
-interface TypographyProps {
+import { TypographyProps as MuiTypographyProps } from '@mui/material/Typography'
+interface TypographyProps extends MuiTypographyProps {
   fontSize?: number
   lineHeight?: number
   fontWeight?: 300 | 500 | 700

@@ -41,16 +41,12 @@ function Contact({
         <MotionBox delay={0.1}>
           <GreetingText variant="body1">{greetings}</GreetingText>
         </MotionBox>
-        <MotionBox delay={0.2}>
-          <Typography mt={1.25} mb={1.25} variant="h4">
-            {name}
-          </Typography>
-        </MotionBox>
-        <MotionBox delay={0.3}>
-          <Typography mt={1} mb={3.75} variant="h5">
-            {job}
-          </Typography>
-        </MotionBox>
+        <Typography delay={0.2} mt={1.25} mb={1.25} variant="h4">
+          {name}
+        </Typography>
+        <Typography delay={0.3} mt={1} mb={3.75} variant="h5">
+          {job}
+        </Typography>
         <MotionBox delay={0.4}>
           <List>
             {contacts?.map((contact) => {

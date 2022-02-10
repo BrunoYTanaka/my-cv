@@ -30,16 +30,17 @@ function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
         </MotionBox>
       </Grid>
       <S.RightWrapper item sm={6}>
-        <MotionBox delay={0.1}>
-          <Typography margin="10px 0" fontWeight={700} variant="h3">
-            {title}
-          </Typography>
-        </MotionBox>
-        <MotionBox delay={0.2}>
-          <Typography margin="0 0 30px 0" fontWeight={500} variant="subtitle1">
-            {description}
-          </Typography>
-        </MotionBox>
+        <Typography delay={0.1} margin="10px 0" fontWeight={700} variant="h3">
+          {title}
+        </Typography>
+        <Typography
+          delay={0.2}
+          margin="0 0 30px 0"
+          fontWeight={500}
+          variant="subtitle1"
+        >
+          {description}
+        </Typography>
         <MotionBox delay={0.3}>
           <S.Tools>
             {tools.map((tool) => (
