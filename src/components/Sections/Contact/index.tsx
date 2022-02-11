@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
 import Grid from '@mui/material/Grid'
-
+import { useTranslation } from 'next-i18next'
 import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
 import { Typography } from '../../Typography'
 import { List, ListItem, ListItemButton, MotionBox } from '@/components'
@@ -35,11 +35,12 @@ function Contact({
   contacts,
   socialMedia,
 }: ContactProps): ReactElement {
+  const { t } = useTranslation('contact')
   return (
     <Container container justifyContent="center" alignItems="center" id="home">
       <Grid item sm={6}>
         <MotionBox delay={0.1}>
-          <GreetingText variant="body1">{greetings}</GreetingText>
+          <GreetingText variant="body1"> {t('contact-greeting')}</GreetingText>
         </MotionBox>
         <Typography delay={0.2} mt={1.25} mb={1.25} variant="h4">
           {name}

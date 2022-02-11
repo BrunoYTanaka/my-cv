@@ -5,8 +5,10 @@ import { CustomLink } from '..'
 import { Box, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { links } from '@/config'
+import { useTranslation } from 'next-i18next'
 
 function Sidebar(): ReactElement {
+  const { t } = useTranslation('header')
   const [currentIndex, setCurrentIndex] = React.useState(0)
   const sidebarRef = React.useRef<HTMLDivElement>(null)
   const { isMenuOpen, handleOpenMenu } = useMenuContext()
@@ -47,7 +49,7 @@ function Sidebar(): ReactElement {
             isActive={currentIndex === index}
             onClick={() => handleClick(index)}
           >
-            {item.text}
+            {t(item.text)}
           </CustomLink>
         ))}
       </S.SidebarWrapper>

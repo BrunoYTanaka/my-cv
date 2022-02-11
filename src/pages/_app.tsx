@@ -1,11 +1,12 @@
 import React from 'react'
+import { appWithTranslation } from 'next-i18next'
 import { AppProps } from 'next/app'
 import CssBaseline from '@mui/material/CssBaseline'
 import { DefaultLayout } from '@/layout/defaultLayout'
 import { ThemeModeContextProvider } from '@/hooks/useThemeMode'
 // http://cvresumetemplate.com/maha-personal-cv-resume-html-template/home-two.html
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeModeContextProvider>
       <DefaultLayout>
@@ -15,3 +16,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </ThemeModeContextProvider>
   )
 }
+
+export default appWithTranslation(MyApp)

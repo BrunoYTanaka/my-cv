@@ -40,9 +40,8 @@ export const layout = {
     ],
   },
   aboutMe: {
-    title: 'About Me',
-    description:
-      'Hello, I’m a Bruno, web-developer based on Brazil. I have experience in web site building and customization. Also I have experience with',
+    title: 'about-me-title',
+    description: 'about-me-description',
     tools: [
       {
         id: 0,
@@ -76,7 +75,7 @@ export const layout = {
   },
   skills: {
     technicalSKills: {
-      title: 'Technical Skills',
+      title: 'skills-technical-title',
       skills: [
         {
           id: 0,
@@ -106,22 +105,22 @@ export const layout = {
       ],
     },
     professionalSkills: {
-      title: 'Professional Skills',
+      title: 'skills-professional-title',
       skills: [
         {
           id: 0,
-          name: 'Team Work',
+          name: 'skills-technical-team-work',
           percentage: 90,
         },
         {
           id: 1,
-          name: 'Responsability',
+          name: 'skills-technical-responsability',
           percentage: 87,
         },
 
         {
           id: 2,
-          name: 'Communication',
+          name: 'skills-technical-communication',
           percentage: 75,
         },
       ],
@@ -129,30 +128,30 @@ export const layout = {
   },
   experiences: {
     educations: {
-      title: 'Education',
+      title: 'experience-education-title',
       experiences: [
         {
           id: 0,
           title: 'Universidade Estadual de Mato Grosso do Sul (UEMS)',
           duration: '2014-2018',
-          text: "Bachelor's degree in computer science",
+          text: 'experience-education-uems',
         },
       ],
     },
     workExperiences: {
-      title: 'Work Experience',
+      title: 'experience-work-title',
       experiences: [
         {
           id: 0,
           title: 'Agile Content',
-          duration: '2021-present',
-          text: 'Frontend developer responsible for maintenance and development of the Now online site.',
+          duration: '2021 - present',
+          text: 'experience-education-agile',
         },
         {
           id: 1,
           title: 'E-deploy',
-          duration: '2019-2021',
-          text: 'Frontend developer responsible for maintenance and development alot sites like, Burger King, Natura, Pax Primavera, etc.',
+          duration: '2019 - 2021',
+          text: 'experience-education-edeploy',
         },
       ],
     },
@@ -162,22 +161,22 @@ export const layout = {
 export const links = [
   {
     id: 0,
-    text: 'home',
+    text: 'header-home',
     to: 'home',
   },
   {
     id: 1,
-    text: 'about',
+    text: 'header-about',
     to: 'about',
   },
   {
     id: 2,
-    text: 'skills',
+    text: 'header-skills',
     to: 'skills',
   },
   {
     id: 3,
-    text: 'experiences',
+    text: 'header-experiences',
     to: 'experiences',
   },
 ]

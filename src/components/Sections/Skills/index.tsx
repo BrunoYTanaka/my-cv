@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import * as S from './styles'
 import { Typography } from '../../Typography'
 import { Skillbar } from '@/components'
+import { useTranslation } from 'next-i18next'
 
 interface Skill {
   id: number
@@ -24,6 +25,7 @@ function Skills({
   technicalSKills,
   professionalSkills,
 }: SkillsProps): ReactElement {
+  const { t } = useTranslation('skills')
   return (
     <S.Container
       container
@@ -33,7 +35,7 @@ function Skills({
     >
       <S.LeftWrapper item sm={6}>
         <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
-          {technicalSKills.title}
+          {t(technicalSKills.title)}
         </Typography>
         {technicalSKills.skills.map((skill) => (
           <Skillbar
@@ -45,12 +47,12 @@ function Skills({
       </S.LeftWrapper>
       <S.RightWrapper item sm={6}>
         <Typography variant="h4" fontWeight={700} align="center" mb={3.75}>
-          {professionalSkills.title}
+          {t(professionalSkills.title)}
         </Typography>
         {professionalSkills.skills.map((skill) => (
           <Skillbar
             key={skill.id}
-            name={skill.name}
+            name={t(skill.name)}
             percentage={skill.percentage}
           />
         ))}

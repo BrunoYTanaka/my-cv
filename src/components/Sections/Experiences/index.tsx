@@ -1,7 +1,8 @@
 import { ReactElement } from 'react'
 import { Card } from '@/components/Card'
 import * as S from './styles'
-import { MotionBox, Typography } from '@/components'
+import { Typography } from '@/components'
+import { useTranslation } from 'next-i18next'
 
 interface Experience {
   id: number
@@ -25,6 +26,7 @@ function Experiences({
   educations,
   workExperiences,
 }: ExperiencesProps): ReactElement {
+  const { t } = useTranslation('experience')
   return (
     <S.Container
       container
@@ -40,11 +42,16 @@ function Experiences({
           align="center"
           mb={3.75}
         >
-          {educations.title}
+          {t(educations.title)}
         </Typography>
 
         {educations.experiences.map((experience) => (
-          <Card key={experience.id} {...experience} />
+          <Card
+            key={experience.id}
+            {...experience}
+            title={t(experience.title)}
+            text={t(experience.text)}
+          />
         ))}
       </S.LeftWrapper>
       <S.RightWrapper item sm={6}>
@@ -55,11 +62,16 @@ function Experiences({
           align="center"
           mb={3.75}
         >
-          {workExperiences.title}
+          {t(workExperiences.title)}
         </Typography>
 
         {workExperiences.experiences.map((experience) => (
-          <Card key={experience.id} {...experience} />
+          <Card
+            key={experience.id}
+            {...experience}
+            title={t(experience.title)}
+            text={t(experience.text)}
+          />
         ))}
       </S.RightWrapper>
     </S.Container>

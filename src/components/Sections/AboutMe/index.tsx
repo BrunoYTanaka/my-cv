@@ -5,6 +5,7 @@ import * as S from './styles'
 import skillsImage from '../../../../public/skills.png'
 import { Typography } from '../../Typography'
 import { MotionBox } from '@/components'
+import { useTranslation } from 'next-i18next'
 interface Tool {
   id: number
   name: string
@@ -17,6 +18,7 @@ interface AboutMeProps {
 }
 
 function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
+  const { t } = useTranslation('about-me')
   return (
     <S.Container
       container
@@ -31,7 +33,7 @@ function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
       </Grid>
       <S.RightWrapper item sm={6}>
         <Typography delay={0.1} margin="10px 0" fontWeight={700} variant="h3">
-          {title}
+          {t(title)}
         </Typography>
         <Typography
           delay={0.2}
@@ -39,7 +41,7 @@ function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
           fontWeight={500}
           variant="subtitle1"
         >
-          {description}
+          {t(description, { name: 'Bruno' })}
         </Typography>
         <MotionBox delay={0.3}>
           <S.Tools>
@@ -49,7 +51,9 @@ function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
           </S.Tools>
         </MotionBox>
         <MotionBox delay={0.4}>
-          <S.Button variant="outlined">Download CV</S.Button>
+          <S.Button variant="outlined">
+            {t('about-me-download-button')}
+          </S.Button>
         </MotionBox>
       </S.RightWrapper>
     </S.Container>

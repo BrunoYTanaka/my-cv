@@ -1,15 +1,15 @@
 import React from 'react'
 import { Contact, AboutMe, Skills, Experiences } from '@/components'
-
+import { SSRConfig } from 'next-i18next'
 import { layout } from '@/config'
 
-function Home() {
+function Home(props: SSRConfig) {
   return (
     <React.Fragment>
-      <Contact {...layout.contact} />
-      <AboutMe {...layout.aboutMe} />
-      <Skills {...layout.skills} />
-      <Experiences {...layout.experiences} />
+      <Contact {...layout.contact} {...props} />
+      <AboutMe {...layout.aboutMe} {...props} />
+      <Skills {...layout.skills} {...props} />
+      <Experiences {...layout.experiences} {...props} />
     </React.Fragment>
   )
 }

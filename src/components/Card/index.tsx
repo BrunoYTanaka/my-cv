@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 import { Typography } from '@/components/Typography'
 import { defaultTransition, fadeInUpVariants } from '@/constants/framerMotion'
 import * as S from './styles'
+import { useTranslation } from 'next-i18next'
 
 interface CardProps {
   title: string
@@ -13,7 +14,8 @@ interface CardProps {
 
 function Card({ delay = 0.1, title, duration, text }: CardProps): ReactElement {
   const theme = useTheme()
-
+  const { t } = useTranslation('experience')
+  const period = duration.replace('present', t('experience-present'))
   return (
     <S.Card
       initial="hidden"
@@ -31,7 +33,7 @@ function Card({ delay = 0.1, title, duration, text }: CardProps): ReactElement {
         mb={1.25}
         color={theme.palette.primary.main}
       >
-        {duration}
+        {period}
       </Typography>
       <Typography m={0}>{text}</Typography>
     </S.Card>

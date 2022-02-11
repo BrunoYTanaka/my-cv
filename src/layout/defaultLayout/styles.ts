@@ -6,7 +6,7 @@ export const Container = styled('main')(({ theme }) => ({
   padding: '0 1rem',
   margin: '0 auto 5rem',
   [theme.breakpoints.down('xl')]: {
-    maxWidth: 900,
+    maxWidth: 1000,
     marginBottom: 0,
   },
   [theme.breakpoints.down('sm')]: {
