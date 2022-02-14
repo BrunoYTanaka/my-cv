@@ -1,4 +1,4 @@
-import { styled, css } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import MuiButton, { ButtonProps } from '@mui/material/Button'
 interface SidebarProps {
   open: boolean
@@ -25,7 +25,7 @@ export const SidebarWrapper = styled('nav')(() => ({
 
 export const ButtonsWrapper = styled('div')(() => ({
   display: 'inline-flex',
-  borderRadius: '10px',
+  borderRadius: '0.625rem',
   width: '100%',
 }))
 
@@ -37,8 +37,8 @@ export const Button = styled(MuiButton)<CustomButtonProps>(
   ({ theme, isSelected }) => ({
     width: '100%',
     textTransform: 'none',
-    padding: '11px',
-    borderRadius: '10px',
+    padding: '0.75rem',
+    borderRadius: '0.625rem',
     border: '1px solid',
     color: isSelected ? theme.palette.primary.dark : theme.palette.text.primary,
     borderColor: isSelected
@@ -61,7 +61,18 @@ export const Button = styled(MuiButton)<CustomButtonProps>(
     },
 
     svg: {
-      marginRight: 8,
+      marginRight: '0.5rem',
     },
+  }),
+)
+
+export const LanguageButton = styled(MuiButton)<CustomButtonProps>(
+  ({ isSelected }) => ({
+    width: '100%',
+    textTransform: 'none',
+    padding: '0.75rem',
+    borderRadius: '0.625rem',
+    border: isSelected ? '1px solid' : 'none',
+    marginBottom: 5,
   }),
 )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { i18n } from 'next-i18next'
+import { useRouter } from 'next/router'
 
 interface IntlContextData {
   lang: string
@@ -12,14 +12,26 @@ interface IntlContextProviderProps {
   children: React.ReactNode
 }
 
-type Lang = 'eng' | 'pt'
+type Lang = 'en' | 'pt'
 
 export function IntlContextProvider({ children }: IntlContextProviderProps) {
-  const [lang, setLang] = React.useState<Lang>('pt')
+  const [lang, setLang] = React.useState<Lang>('en')
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const langLS = localStorage.getItem('@lang')
+    if (langLS) {
+      setLang(langLS as Lang)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    localStorage.setItem('@lang', lang)
+  }, [lang])
 
   const switchLang = (newLang: Lang) => {
-    setLang(newLang)
-    i18n?.changeLanguage(newLang)
+    const { pathname, asPath, query } = router
+    router.replace({ pathname, query }, asPath, { locale: newLang })
   }
 
   return (

@@ -10,12 +10,18 @@ import { Typography } from '@/components/Typography'
 import { useTranslation } from 'next-i18next'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
-import { useThemeMode } from '@/hooks/useThemeMode'
+import { useTheme } from '@mui/material/styles'
+import { useIntl } from '@/hooks/useIntl'
 
-function LeftDrawer() {
-  const { t } = useTranslation('header')
+interface LeftDrawerProps {
+  toggleThemeMode: () => void
+}
+
+function LeftDrawer({ toggleThemeMode }: LeftDrawerProps) {
+  const { t } = useTranslation('glossary')
   const { isLeftDrawerOpen, toggleLeftDrawer } = useMenuContext()
-  const { theme, toggleThemeMode } = useThemeMode()
+  const { lang, switchLang } = useIntl()
+  const theme = useTheme()
 
   const handleChangeTheme = () => {
     toggleThemeMode()
@@ -31,7 +37,7 @@ function LeftDrawer() {
         alignItems="center"
       >
         <Typography fontSize={1} lineHeight={1.5} fontWeight={700}>
-          Settings
+          {t('settings')}
         </Typography>
         <IconButton onClick={() => toggleLeftDrawer(false)}>
           <CloseIcon />
@@ -53,17 +59,40 @@ function LeftDrawer() {
             onClick={handleChangeTheme}
             isSelected={theme.palette?.mode === 'light'}
           >
-            <LightModeIcon style={{ marginRight: 8 }} />
+            <LightModeIcon />
             {t('light')}
           </S.Button>
           <S.Button
             onClick={handleChangeTheme}
             isSelected={theme.palette?.mode === 'dark'}
           >
-            <DarkModeIcon style={{ marginRight: 8 }} />
+            <DarkModeIcon />
             {t('dark')}
           </S.Button>
         </S.ButtonsWrapper>
+      </Box>
+      <Box pr={1} pl={1}>
+        <Typography
+          fontSize={0.6875}
+          lineHeight={1.5}
+          fontWeight={700}
+          letterSpacing={0.08}
+          margin="20px 0px 10px"
+        >
+          {t('mode')}
+        </Typography>
+        <S.LanguageButton
+          onClick={() => switchLang('pt')}
+          isSelected={lang === 'pt'}
+        >
+          Português
+        </S.LanguageButton>
+        <S.LanguageButton
+          onClick={() => switchLang('en')}
+          isSelected={lang === 'en'}
+        >
+          Inglês
+        </S.LanguageButton>
       </Box>
     </Box>
   )

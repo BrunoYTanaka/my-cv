@@ -1,23 +1,15 @@
 import React from 'react'
 import { createTheme, ThemeOptions } from '@mui/material/styles'
-import { grey, purple } from '@mui/material/colors'
+import { grey } from '@mui/material/colors'
 
 interface ThemeModeContextData {
   theme: ThemeOptions
   toggleThemeMode: () => void
 }
 
-export const ThemeModeContext = React.createContext({} as ThemeModeContextData)
-
-interface ThemeModeContextProviderProps {
-  children: React.ReactNode
-}
-
 type Mode = 'light' | 'dark'
 
-export function ThemeModeContextProvider({
-  children,
-}: ThemeModeContextProviderProps) {
+export const useThemeMode = (): ThemeModeContextData => {
   const [mode, setMode] = React.useState<Mode>('dark')
 
   const toggleThemeMode = React.useCallback(() => {
@@ -53,21 +45,6 @@ export function ThemeModeContextProvider({
       }),
     [mode],
   )
-
-  return (
-    <ThemeModeContext.Provider
-      value={{
-        theme,
-        toggleThemeMode,
-      }}
-    >
-      {children}
-    </ThemeModeContext.Provider>
-  )
-}
-
-export const useThemeMode = (): ThemeModeContextData => {
-  const { theme, toggleThemeMode } = React.useContext(ThemeModeContext)
 
   return { theme, toggleThemeMode }
 }

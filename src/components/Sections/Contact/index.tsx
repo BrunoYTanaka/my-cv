@@ -28,7 +28,6 @@ interface ContactProps {
 }
 
 function Contact({
-  greetings,
   name,
   avatarUrl,
   job,
