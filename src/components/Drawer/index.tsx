@@ -18,9 +18,9 @@ interface LeftDrawerProps {
 }
 
 function LeftDrawer({ toggleThemeMode }: LeftDrawerProps) {
-  const { t } = useTranslation('glossary')
+  const { t, i18n } = useTranslation('glossary')
   const { isLeftDrawerOpen, toggleLeftDrawer } = useMenuContext()
-  const { lang, switchLang } = useIntl()
+  const { switchLang } = useIntl()
   const theme = useTheme()
 
   const handleChangeTheme = () => {
@@ -83,13 +83,13 @@ function LeftDrawer({ toggleThemeMode }: LeftDrawerProps) {
         </Typography>
         <S.LanguageButton
           onClick={() => switchLang('pt')}
-          isSelected={lang === 'pt'}
+          isSelected={i18n.language === 'pt'}
         >
           Português
         </S.LanguageButton>
         <S.LanguageButton
           onClick={() => switchLang('en')}
-          isSelected={lang === 'en'}
+          isSelected={i18n.language === 'en'}
         >
           Inglês
         </S.LanguageButton>
