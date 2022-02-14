@@ -49,7 +49,6 @@ function Header(): ReactElement {
             ))
           )}
         </S.LinkWrapper>
-
         <IconButton onClick={handleChangeTheme}>
           {theme.palette.mode === 'dark' ? (
             <Brightness7Icon />
