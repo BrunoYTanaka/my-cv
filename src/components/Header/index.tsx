@@ -6,26 +6,19 @@ import { useTheme } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import { useMenuContext } from '@/hooks/useMenu'
 import { CustomLink } from '..'
-import Brightness4Icon from '@mui/icons-material/Brightness4'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { links } from '@/config'
-import { useThemeMode } from '@/hooks/useThemeMode'
 import { useTranslation } from 'next-i18next'
+import SettingsIcon from '@mui/icons-material/Settings'
 
 function Header(): ReactElement {
   const { t } = useTranslation('header')
   const [currentIndex, setCurrentIndex] = React.useState(0)
-  const { toggleThemeMode } = useThemeMode()
-  const { handleOpenMenu } = useMenuContext()
+  const { toggleLeftDrawer, handleOpenMenu } = useMenuContext()
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
   const handleClick = (index: number) => {
     setCurrentIndex(index)
-  }
-
-  const handleChangeTheme = () => {
-    toggleThemeMode()
   }
 
   return (
@@ -49,12 +42,8 @@ function Header(): ReactElement {
             ))
           )}
         </S.LinkWrapper>
-        <IconButton onClick={handleChangeTheme}>
-          {theme.palette.mode === 'dark' ? (
-            <Brightness7Icon />
-          ) : (
-            <Brightness4Icon />
-          )}
+        <IconButton onClick={() => toggleLeftDrawer(true)}>
+          <SettingsIcon />
         </IconButton>
       </S.HeaderWrapper>
     </S.Header>

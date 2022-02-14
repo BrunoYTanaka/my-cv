@@ -6,6 +6,7 @@ interface TypographyProps extends MuiTypographyProps {
   lineHeight?: number
   fontWeight?: 300 | 500 | 700
   color?: string
+  letterSpacing?: number
 }
 
 export const Typography = styled(MuiTypography)<TypographyProps>(
@@ -15,10 +16,12 @@ export const Typography = styled(MuiTypography)<TypographyProps>(
     fontSize,
     lineHeight,
     color = theme.palette.text.primary,
+    letterSpacing,
   }) => ({
     fontWeight: fontWeight,
     fontSize: fontSize && `${fontSize}rem`,
     lineHeight: lineHeight && `${lineHeight}rem`,
     color: color,
+    letterSpacing: letterSpacing && `${letterSpacing}rem`,
   }),
 )

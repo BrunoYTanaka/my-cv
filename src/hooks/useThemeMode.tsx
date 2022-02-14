@@ -40,7 +40,6 @@ export function ThemeModeContextProvider({
       createTheme({
         palette: {
           mode,
-          primary: purple,
           ...(mode === 'light'
             ? {
                 neutral: grey[300],

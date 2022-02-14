@@ -1,9 +1,10 @@
 import { Footer, Header, Sidebar } from '@/components'
-import { IntlContextProvider } from '@/hooks/useIntl'
 import { MenuContextProvider } from '@/hooks/useMenu'
 import { useThemeMode } from '@/hooks/useThemeMode'
+import { LeftDrawer } from '@/components/Drawer'
 import { ThemeProvider } from '@mui/material/styles'
 import * as S from './styles'
+import { IntlContextProvider } from '@/hooks/useIntl'
 
 interface DefaultLayoutProps {
   children: React.ReactNode
@@ -17,6 +18,7 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
         <MenuContextProvider>
           <Header />
           <Sidebar />
+          <LeftDrawer />
           <S.Container>{children}</S.Container>
           <Footer />
         </MenuContextProvider>

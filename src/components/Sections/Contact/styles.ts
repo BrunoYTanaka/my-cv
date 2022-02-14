@@ -16,7 +16,7 @@ export const Container = styled(Grid)(({ theme }) => ({
 
 export const GreetingText = styled(MuiTypography)(({ theme }) => ({
   display: 'inline-block',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.primary.dark,
   padding: '10px 30px',
   fontWeight: 'bold',
   borderTopLeftRadius: 20,

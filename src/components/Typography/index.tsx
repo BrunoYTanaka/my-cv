@@ -11,6 +11,7 @@ type CustomTypographyProps = {
   fontWeight?: 300 | 500 | 700
   color?: string
   delay?: number
+  letterSpacing?: number
 }
 
 function Typography<C extends React.ElementType>({
