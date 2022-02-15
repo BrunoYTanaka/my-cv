@@ -18,9 +18,9 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
       <IntlContextProvider>
         <MenuContextProvider>
           <Header />
-          <Sidebar />
           <LeftDrawer toggleThemeMode={toggleThemeMode} />
           <S.Container>{children}</S.Container>
+          <Sidebar />
           <Footer />
         </MenuContextProvider>
       </IntlContextProvider>
