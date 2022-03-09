@@ -84,6 +84,7 @@ function Contact({
               src={avatarUrl}
               layout="fill"
               objectFit="cover"
+              priority
             />
           </AvatarContainer>
         </MotionBox>

@@ -12,25 +12,31 @@ type CustomTypographyProps = {
   color?: string
   delay?: number
   letterSpacing?: number
+  useAnimation?: boolean
 }
 
 function Typography<C extends React.ElementType>({
   children,
   delay = 0.1,
+  useAnimation = true,
   ...rest
 }: TypographyProps<C, { component?: C }> & CustomTypographyProps) {
-  return (
-    <S.Typography
-      component={motion.div}
-      initial="hidden"
-      whileInView="visible"
-      variants={fadeInUpVariants}
-      viewport={{ once: true }}
-      transition={{ ...defaultTransition, delay }}
-      {...rest}
-    >
-      {children}
-    </S.Typography>
-  )
+  if (useAnimation) {
+    return (
+      <S.Typography
+        component={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUpVariants}
+        viewport={{ once: true }}
+        transition={{ ...defaultTransition, delay }}
+        {...rest}
+      >
+        {children}
+      </S.Typography>
+    )
+  }
+
+  return <S.Typography {...rest}>{children}</S.Typography>
 }
 export { Typography }

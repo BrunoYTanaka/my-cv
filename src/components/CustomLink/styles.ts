@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles'
 import { Link } from 'react-scroll'
 
-export const Anchor = styled(Link)(({ theme }) => ({
+export const CustomLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.text.primary,
   fontSize: '1.125rem', //18px

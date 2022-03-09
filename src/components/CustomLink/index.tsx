@@ -1,16 +1,16 @@
 import React from 'react'
 import * as S from './styles'
 
-interface AnchorProps {
+interface CustomLinkProps {
   children: React.ReactNode
   isActive: boolean
   to: string
   onClick?: () => void
 }
 
-function CustomLink({ children, to, onClick }: AnchorProps) {
+function CustomLink({ children, to, onClick }: CustomLinkProps) {
   return (
-    <S.Anchor
+    <S.CustomLink
       onClick={onClick}
       to={to}
       smooth={true}
@@ -19,7 +19,7 @@ function CustomLink({ children, to, onClick }: AnchorProps) {
       spy={true}
     >
       {children}
-    </S.Anchor>
+    </S.CustomLink>
   )
 }
 

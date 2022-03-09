@@ -36,7 +36,12 @@ function LeftDrawer({ toggleThemeMode }: LeftDrawerProps) {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography fontSize={1} lineHeight={1.5} fontWeight={700}>
+        <Typography
+          fontSize={1}
+          lineHeight={1.5}
+          fontWeight={700}
+          useAnimation={false}
+        >
           {t('settings')}
         </Typography>
         <IconButton onClick={() => toggleLeftDrawer(false)}>
@@ -51,6 +56,7 @@ function LeftDrawer({ toggleThemeMode }: LeftDrawerProps) {
           fontWeight={700}
           letterSpacing={0.08}
           margin="20px 0px 10px"
+          useAnimation={false}
         >
           {t('mode')}
         </Typography>
@@ -78,6 +84,7 @@ function LeftDrawer({ toggleThemeMode }: LeftDrawerProps) {
           fontWeight={700}
           letterSpacing={0.08}
           margin="20px 0px 10px"
+          useAnimation={false}
         >
           {t('mode')}
         </Typography>
