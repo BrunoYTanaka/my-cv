@@ -4,23 +4,6 @@ import { Typography } from '../../Typography'
 import { Skillbar } from '@/components'
 import { useTranslation } from 'next-i18next'
 
-interface Skill {
-  id: number
-  name: string
-  percentage: number
-}
-
-interface SkillsProps {
-  technicalSKills: {
-    title: string
-    skills: Skill[]
-  }
-  professionalSkills: {
-    title: string
-    skills: Skill[]
-  }
-}
-
 function Skills({
   technicalSKills,
   professionalSkills,

@@ -6,26 +6,6 @@ import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
 import { Typography } from '../../Typography'
 import { List, ListItem, ListItemButton, MotionBox } from '@/components'
 import { icons } from '@/constants/icons'
-interface ContactData {
-  id: number
-  icon: string
-  text: string
-}
-
-interface socialMedia {
-  id: number
-  icon: string
-  link: string
-}
-
-interface ContactProps {
-  greetings: string
-  name: string
-  avatarUrl: string
-  job: string
-  contacts: ContactData[]
-  socialMedia: socialMedia[]
-}
 
 function Contact({
   name,

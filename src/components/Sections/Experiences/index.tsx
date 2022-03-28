@@ -4,24 +4,6 @@ import * as S from './styles'
 import { Typography } from '@/components'
 import { useTranslation } from 'next-i18next'
 
-interface Experience {
-  id: number
-  title: string
-  duration: string
-  text: string
-}
-
-interface ExperiencesProps {
-  educations: {
-    title: string
-    experiences: Experience[]
-  }
-  workExperiences: {
-    title: string
-    experiences: Experience[]
-  }
-}
-
 function Experiences({
   educations,
   workExperiences,

@@ -6,16 +6,6 @@ import skillsImage from '../../../../public/skills.png'
 import { Typography } from '../../Typography'
 import { MotionBox } from '@/components'
 import { useTranslation } from 'next-i18next'
-interface Tool {
-  id: number
-  name: string
-}
-
-interface AboutMeProps {
-  title: string
-  description: string
-  tools: Tool[]
-}
 
 function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
   const { t } = useTranslation('about-me')
