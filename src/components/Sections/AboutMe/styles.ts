@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles'
 import Grid from '@mui/material/Grid'
-import MuiButton, { ButtonProps } from '@mui/material/Button'
 
 export const Container = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
@@ -40,18 +39,4 @@ export const ToolsItem = styled('li')(({ theme }) => ({
   lineHeight: '16px',
   cursor: 'default',
   fontWeight: 300,
-}))
-
-export const Button = styled(MuiButton)<ButtonProps>(({ theme }) => ({
-  marginTop: 20,
-  padding: '10px 15px',
-  borderRadius: 24,
-  borderColor: theme.palette.primary.main,
-  borderWidth: 2,
-  fontWeight: 700,
-  color: theme.palette.text.primary,
-  '&:hover': {
-    borderWidth: 2,
-    backgroundColor: theme.palette.primary.main,
-  },
 }))

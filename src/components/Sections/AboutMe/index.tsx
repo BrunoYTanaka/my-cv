@@ -50,11 +50,6 @@ function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {
             ))}
           </S.Tools>
         </MotionBox>
-        <MotionBox delay={0.4}>
-          <S.Button variant="outlined">
-            {t('about-me-download-button')}
-          </S.Button>
-        </MotionBox>
       </S.RightWrapper>
     </S.Container>
   )
