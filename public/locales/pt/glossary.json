@@ -2,5 +2,7 @@
   "mode": "MODO",
   "settings": "Configurações",
   "light": "Claro",
-  "dark": "Escuro"
+  "dark": "Escuro",
+  "english": "Inglês",
+  "portuguese": "Português"
 }

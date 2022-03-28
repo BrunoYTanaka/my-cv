@@ -13,7 +13,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 function Header(): ReactElement {
   const { t } = useTranslation('header')
   const [currentIndex, setCurrentIndex] = React.useState(0)
-  const { toggleLeftDrawer, handleOpenMenu } = useMenuContext()
+  const { toggleLeftDrawer, toggleRightDrawer } = useMenuContext()
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -26,7 +26,7 @@ function Header(): ReactElement {
       <S.HeaderWrapper>
         <S.LinkWrapper>
           {isMobileScreen ? (
-            <IconButton onClick={handleOpenMenu}>
+            <IconButton onClick={() => toggleLeftDrawer(true)}>
               <MenuIcon />
             </IconButton>
           ) : (
@@ -42,7 +42,7 @@ function Header(): ReactElement {
             ))
           )}
         </S.LinkWrapper>
-        <IconButton onClick={() => toggleLeftDrawer(true)}>
+        <IconButton onClick={() => toggleRightDrawer(true)}>
           <SettingsIcon />
         </IconButton>
       </S.HeaderWrapper>

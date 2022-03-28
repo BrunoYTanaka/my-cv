@@ -1,7 +1,7 @@
-import { Footer, Header, Sidebar } from '@/components'
+import { Footer, Header } from '@/components'
 import { MenuContextProvider } from '@/hooks/useMenu'
 import { useThemeMode } from '@/hooks/useThemeMode'
-import { LeftDrawer } from '@/components/Drawer'
+import { Drawer } from '@/components/Drawer'
 import { ThemeProvider } from '@mui/material/styles'
 import { IntlContextProvider } from '@/hooks/useIntl'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -18,9 +18,9 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
       <IntlContextProvider>
         <MenuContextProvider>
           <Header />
-          <LeftDrawer toggleThemeMode={toggleThemeMode} />
+          <Drawer toggleThemeMode={toggleThemeMode} />
           <S.Container>{children}</S.Container>
-          <Sidebar />
+          <Drawer direction="left" />
           <Footer />
         </MenuContextProvider>
       </IntlContextProvider>

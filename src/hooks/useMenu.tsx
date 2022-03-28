@@ -1,10 +1,10 @@
 import React from 'react'
 
 interface MenuContextData {
-  isMenuOpen: boolean
   isLeftDrawerOpen: boolean
-  handleOpenMenu: () => void
+  isRightDrawerOpen: boolean
   toggleLeftDrawer: (value: boolean) => void
+  toggleRightDrawer: (value: boolean) => void
 }
 
 const MenuContext = React.createContext({} as MenuContextData)
@@ -14,20 +14,24 @@ interface MenuContextProviderProps {
 }
 
 export function MenuContextProvider({ children }: MenuContextProviderProps) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const [isLeftDrawerOpen, isSetLeftDrawerOpen] = React.useState(false)
-
-  const handleOpenMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const [isRightDrawerOpen, isSetRightDrawerOpen] = React.useState(false)
 
   const toggleLeftDrawer = (value: boolean) => {
     isSetLeftDrawerOpen(value)
   }
+  const toggleRightDrawer = (value: boolean) => {
+    isSetRightDrawerOpen(value)
+  }
 
   return (
     <MenuContext.Provider
-      value={{ isMenuOpen, isLeftDrawerOpen, handleOpenMenu, toggleLeftDrawer }}
+      value={{
+        isLeftDrawerOpen,
+        isRightDrawerOpen,
+        toggleLeftDrawer,
+        toggleRightDrawer,
+      }}
     >
       {children}
     </MenuContext.Provider>
@@ -35,13 +39,17 @@ export function MenuContextProvider({ children }: MenuContextProviderProps) {
 }
 
 export const useMenuContext = (): MenuContextData => {
-  const { isMenuOpen, handleOpenMenu, isLeftDrawerOpen, toggleLeftDrawer } =
-    React.useContext(MenuContext)
+  const {
+    isLeftDrawerOpen,
+    isRightDrawerOpen,
+    toggleLeftDrawer,
+    toggleRightDrawer,
+  } = React.useContext(MenuContext)
 
   return {
-    isMenuOpen,
     isLeftDrawerOpen,
-    handleOpenMenu,
+    isRightDrawerOpen,
     toggleLeftDrawer,
+    toggleRightDrawer,
   }
 }
