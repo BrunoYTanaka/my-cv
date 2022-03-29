@@ -18,7 +18,9 @@ export const ListItemButton = styled(MuiListItemButton)(({ theme }) => ({
   gap: '1rem',
   width: 'fit-content',
   cursor: 'pointer',
+  transition: 'transform 0.3s ease',
   '&:hover': {
+    transform: 'scale(1.2)',
     [`${ListItemIcon}`]: {
       color: theme.palette.primary.main,
     },
