@@ -9,7 +9,7 @@ import { useTheme } from '@mui/material/styles'
 import { useIntl } from '@/hooks/useIntl'
 import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { useMenuContext } from '@/hooks/useMenu'
+import { useDrawer } from '@/hooks/useDrawer'
 import * as S from './styles'
 
 interface RightSidebarProps {
@@ -18,7 +18,7 @@ interface RightSidebarProps {
 
 const RightSidebar = ({ handleChangeTheme }: RightSidebarProps) => {
   const { t, i18n } = useTranslation('glossary')
-  const { toggleRightDrawer } = useMenuContext()
+  const { toggleRightDrawer } = useDrawer()
   const { switchLang } = useIntl()
   const theme = useTheme()
 

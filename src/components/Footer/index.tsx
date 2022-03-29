@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { List, ListItemButton } from '@/components'
+import { List, ListItemButton } from '@/components/List'
 import { layout } from '@/config'
 import { icons } from '@/constants/icons'
 import { defaultTransition, fadeInUpVariants } from '@/constants/framerMotion'

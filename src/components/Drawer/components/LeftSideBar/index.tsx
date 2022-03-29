@@ -4,14 +4,14 @@ import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import * as S from './styles'
 import { CustomLink } from '@/components/CustomLink'
-import { links } from '@/config'
-import { useMenuContext } from '@/hooks/useMenu'
+import { LINKS } from '@/constants/links'
+import { useDrawer } from '@/hooks/useDrawer'
 import { useTranslation } from 'next-i18next'
 
 function LeftSidebar() {
   const { t } = useTranslation('header')
   const [currentIndex, setCurrentIndex] = React.useState(0)
-  const { toggleLeftDrawer } = useMenuContext()
+  const { toggleLeftDrawer } = useDrawer()
 
   const handleClick = (index: number) => {
     setCurrentIndex(index)
@@ -26,7 +26,7 @@ function LeftSidebar() {
         </IconButton>
       </Box>
       <S.SidebarWrapper>
-        {links.map((item, index) => (
+        {LINKS.map((item, index) => (
           <CustomLink
             to={item.to}
             key={item.id}

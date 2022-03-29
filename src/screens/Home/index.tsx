@@ -1,7 +1,6 @@
 import React from 'react'
-import { Contact, AboutMe, Skills, Experiences } from '@/components'
+import { Contact, AboutMe, Skills, Experiences } from '@/components/Sections'
 import { SSRConfig } from 'next-i18next'
-// import { layout } from '@/config'
 
 interface HomeProps extends SSRConfig {
   layout: LayoutProps

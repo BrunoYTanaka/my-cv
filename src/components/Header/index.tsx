@@ -4,16 +4,16 @@ import MenuIcon from '@mui/icons-material/Menu'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
-import { useMenuContext } from '@/hooks/useMenu'
-import { CustomLink } from '..'
-import { links } from '@/config'
+import { useDrawer } from '@/hooks/useDrawer'
+import { CustomLink } from '@/components/CustomLink'
+import { LINKS } from '@/constants/links'
 import { useTranslation } from 'next-i18next'
 import SettingsIcon from '@mui/icons-material/Settings'
 
 function Header(): ReactElement {
   const { t } = useTranslation('header')
   const [currentIndex, setCurrentIndex] = React.useState(0)
-  const { toggleLeftDrawer, toggleRightDrawer } = useMenuContext()
+  const { toggleLeftDrawer, toggleRightDrawer } = useDrawer()
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -30,7 +30,7 @@ function Header(): ReactElement {
               <MenuIcon />
             </IconButton>
           ) : (
-            links.map((item, index) => (
+            LINKS.map((item, index) => (
               <CustomLink
                 to={item.to}
                 key={item.id}

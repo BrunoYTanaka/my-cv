@@ -4,7 +4,7 @@ import Image from 'next/image'
 import * as S from './styles'
 import skillsImage from '../../../../public/skills.png'
 import { Typography } from '../../Typography'
-import { MotionBox } from '@/components'
+import { MotionBox } from '@/components/MotionBox'
 import { useTranslation } from 'next-i18next'
 
 function AboutMe({ title, description, tools }: AboutMeProps): ReactElement {

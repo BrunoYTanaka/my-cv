@@ -1,19 +1,21 @@
 import React from 'react'
 
-interface MenuContextData {
+interface DrawerContextData {
   isLeftDrawerOpen: boolean
   isRightDrawerOpen: boolean
   toggleLeftDrawer: (value: boolean) => void
   toggleRightDrawer: (value: boolean) => void
 }
 
-const MenuContext = React.createContext({} as MenuContextData)
+const DrawerContext = React.createContext({} as DrawerContextData)
 
-interface MenuContextProviderProps {
+interface DrawerContextProviderProps {
   children: React.ReactNode
 }
 
-export function MenuContextProvider({ children }: MenuContextProviderProps) {
+export function DrawerContextProvider({
+  children,
+}: DrawerContextProviderProps) {
   const [isLeftDrawerOpen, isSetLeftDrawerOpen] = React.useState(false)
   const [isRightDrawerOpen, isSetRightDrawerOpen] = React.useState(false)
 
@@ -25,7 +27,7 @@ export function MenuContextProvider({ children }: MenuContextProviderProps) {
   }
 
   return (
-    <MenuContext.Provider
+    <DrawerContext.Provider
       value={{
         isLeftDrawerOpen,
         isRightDrawerOpen,
@@ -34,17 +36,17 @@ export function MenuContextProvider({ children }: MenuContextProviderProps) {
       }}
     >
       {children}
-    </MenuContext.Provider>
+    </DrawerContext.Provider>
   )
 }
 
-export const useMenuContext = (): MenuContextData => {
+export const useDrawer = (): DrawerContextData => {
   const {
     isLeftDrawerOpen,
     isRightDrawerOpen,
     toggleLeftDrawer,
     toggleRightDrawer,
-  } = React.useContext(MenuContext)
+  } = React.useContext(DrawerContext)
 
   return {
     isLeftDrawerOpen,

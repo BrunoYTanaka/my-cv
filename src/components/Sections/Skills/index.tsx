@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import * as S from './styles'
 import { Typography } from '../../Typography'
-import { Skillbar } from '@/components'
+import { Skillbar } from '@/components/Skillbar'
 import { useTranslation } from 'next-i18next'
 
 function Skills({

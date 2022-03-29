@@ -1,10 +1,10 @@
 import { ReactElement } from 'react'
-
 import Grid from '@mui/material/Grid'
 import { useTranslation } from 'next-i18next'
 import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
 import { Typography } from '../../Typography'
-import { List, ListItem, ListItemButton, MotionBox } from '@/components'
+import { List, ListItem, ListItemButton } from '@/components/List'
+import { MotionBox } from '@/components/MotionBox'
 import { icons } from '@/constants/icons'
 
 function Contact({

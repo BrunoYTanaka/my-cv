@@ -1,5 +1,6 @@
-import { Footer, Header } from '@/components'
-import { MenuContextProvider } from '@/hooks/useMenu'
+import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
+import { DrawerContextProvider } from '@/hooks/useDrawer'
 import { useThemeMode } from '@/hooks/useThemeMode'
 import { Drawer } from '@/components/Drawer'
 import { ThemeProvider } from '@mui/material/styles'
@@ -16,13 +17,13 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <ThemeProvider theme={theme}>
       <IntlContextProvider>
-        <MenuContextProvider>
+        <DrawerContextProvider>
           <Header />
           <Drawer toggleThemeMode={toggleThemeMode} />
           <S.Container>{children}</S.Container>
           <Drawer direction="left" />
           <Footer />
-        </MenuContextProvider>
+        </DrawerContextProvider>
       </IntlContextProvider>
       <CssBaseline />
     </ThemeProvider>

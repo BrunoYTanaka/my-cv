@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
-import { useMenuContext } from '@/hooks/useMenu'
+import { useDrawer } from '@/hooks/useDrawer'
 import { RightSidebar, LeftSidebar } from './components'
 
 interface DrawerProps {
@@ -15,7 +15,7 @@ function Drawer({ toggleThemeMode, direction = 'right' }: DrawerProps) {
     isRightDrawerOpen,
     toggleLeftDrawer,
     toggleRightDrawer,
-  } = useMenuContext()
+  } = useDrawer()
 
   const handleChangeTheme = () => {
     toggleThemeMode && toggleThemeMode()

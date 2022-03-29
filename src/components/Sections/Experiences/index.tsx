@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import { Card } from '@/components/Card'
 import * as S from './styles'
-import { Typography } from '@/components'
+import { Typography } from '@/components/Typography'
 import { useTranslation } from 'next-i18next'
 
 function Experiences({
