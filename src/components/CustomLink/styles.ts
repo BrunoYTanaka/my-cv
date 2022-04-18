@@ -1,7 +1,9 @@
 import { styled } from '@mui/material/styles'
 import { Link } from 'react-scroll'
+import { motion } from 'framer-motion'
 
 export const CustomLink = styled(Link)(({ theme }) => ({
+  position: 'relative',
   textDecoration: 'none',
   color: theme.palette.text.primary,
   fontSize: '1.125rem', //18px
@@ -15,8 +17,15 @@ export const CustomLink = styled(Link)(({ theme }) => ({
   '&:hover': {
     color: theme.palette.primary.main,
   },
+}))
 
-  '&.active': {
-    borderBottom: `1px solid ${theme.palette.text.primary}`,
-  },
+export const Underline = styled(motion.div)(({ theme }) => ({
+  position: 'absolute',
+  top: '100%',
+  left: 0,
+  width: '100%',
+  height: '0.25rem',
+  borderRadius: '1rem',
+  opacity: 0.85,
+  backgroundColor: theme.palette.text.primary,
 }))

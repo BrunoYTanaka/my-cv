@@ -9,6 +9,8 @@ import { CustomLink } from '@/components/CustomLink'
 import { LINKS } from '@/constants/links'
 import { useTranslation } from 'next-i18next'
 import SettingsIcon from '@mui/icons-material/Settings'
+import { AnimateSharedLayout } from 'framer-motion'
+import { Events } from 'react-scroll'
 
 function Header(): ReactElement {
   const { t } = useTranslation('header')
@@ -17,9 +19,28 @@ function Header(): ReactElement {
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
+  const [disable, setDisable] = React.useState(true)
   const handleClick = (index: number) => {
     setCurrentIndex(index)
   }
+
+  const changeCurrentIndex = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  React.useEffect(() => {
+    Events.scrollEvent.register('begin', () => {
+      setDisable(false)
+    })
+    Events.scrollEvent.register('end', () => {
+      setDisable(true)
+    })
+
+    return () => {
+      Events.scrollEvent.remove('begin')
+      Events.scrollEvent.remove('end')
+    }
+  }, [setDisable])
 
   return (
     <S.Header>
@@ -30,16 +51,21 @@ function Header(): ReactElement {
               <MenuIcon />
             </IconButton>
           ) : (
-            LINKS.map((item, index) => (
-              <CustomLink
-                to={item.to}
-                key={item.id}
-                isActive={currentIndex === index}
-                onClick={() => handleClick(index)}
-              >
-                {t(item.text)}
-              </CustomLink>
-            ))
+            <AnimateSharedLayout>
+              {LINKS.map((item, index) => (
+                <CustomLink
+                  to={item.to}
+                  key={item.id}
+                  position={index}
+                  isActive={currentIndex === index}
+                  onClick={() => handleClick(index)}
+                  changeCurrentIndex={changeCurrentIndex}
+                  disable={disable}
+                >
+                  {t(item.text)}
+                </CustomLink>
+              ))}
+            </AnimateSharedLayout>
           )}
         </S.LinkWrapper>
         <IconButton onClick={() => toggleRightDrawer(true)}>

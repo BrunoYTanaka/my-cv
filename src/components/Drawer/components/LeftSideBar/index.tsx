@@ -7,6 +7,7 @@ import { CustomLink } from '@/components/CustomLink'
 import { LINKS } from '@/constants/links'
 import { useDrawer } from '@/hooks/useDrawer'
 import { useTranslation } from 'next-i18next'
+import { AnimateSharedLayout } from 'framer-motion'
 
 function LeftSidebar() {
   const { t } = useTranslation('header')
@@ -18,6 +19,10 @@ function LeftSidebar() {
     toggleLeftDrawer(false)
   }
 
+  const changeCurrentIndex = (index: number) => {
+    setCurrentIndex(index)
+  }
+
   return (
     <S.Sidebar>
       <Box textAlign="end">
@@ -26,16 +31,21 @@ function LeftSidebar() {
         </IconButton>
       </Box>
       <S.SidebarWrapper>
-        {LINKS.map((item, index) => (
-          <CustomLink
-            to={item.to}
-            key={item.id}
-            isActive={currentIndex === index}
-            onClick={() => handleClick(index)}
-          >
-            {t(item.text)}
-          </CustomLink>
-        ))}
+        <AnimateSharedLayout>
+          {LINKS.map((item, index) => (
+            <CustomLink
+              changeCurrentIndex={changeCurrentIndex}
+              position={index}
+              to={item.to}
+              key={item.id}
+              isActive={currentIndex === index}
+              onClick={() => handleClick(index)}
+              disable={true}
+            >
+              {t(item.text)}
+            </CustomLink>
+          ))}
+        </AnimateSharedLayout>
       </S.SidebarWrapper>
     </S.Sidebar>
   )

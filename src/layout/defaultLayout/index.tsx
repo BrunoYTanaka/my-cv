@@ -19,9 +19,9 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
       <IntlContextProvider>
         <DrawerContextProvider>
           <Header />
-          <Drawer toggleThemeMode={toggleThemeMode} />
-          <S.Container>{children}</S.Container>
           <Drawer direction="left" />
+          <S.Container>{children}</S.Container>
+          <Drawer toggleThemeMode={toggleThemeMode} />
           <Footer />
         </DrawerContextProvider>
       </IntlContextProvider>
