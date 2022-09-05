@@ -1,17 +1,17 @@
-import { HomeScreen } from '@/screens/Home'
+import { SkillsScreen } from '@/screens/Skills'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { DefaultLayout } from '@/layout/defaultLayout'
 import { SSRConfig } from 'next-i18next'
 import api from '@/services/api'
 
-interface HomeProps extends SSRConfig {
+interface SkillsProps extends SSRConfig {
   layout: LayoutProps
 }
 
-export default function HomePage(props: HomeProps) {
+export default function SkillsPage(props: SkillsProps) {
   return (
     <DefaultLayout>
-      <HomeScreen {...props} />
+      <SkillsScreen {...props} />
     </DefaultLayout>
   )
 }

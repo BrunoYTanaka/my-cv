@@ -1,17 +1,17 @@
-import { HomeScreen } from '@/screens/Home'
+import { AboutMeScreen } from '@/screens/AboutMe'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { DefaultLayout } from '@/layout/defaultLayout'
 import { SSRConfig } from 'next-i18next'
 import api from '@/services/api'
 
-interface HomeProps extends SSRConfig {
+interface AboutProps extends SSRConfig {
   layout: LayoutProps
 }
 
-export default function HomePage(props: HomeProps) {
+export default function AboutPage(props: AboutProps) {
   return (
     <DefaultLayout>
-      <HomeScreen {...props} />
+      <AboutMeScreen {...props} />
     </DefaultLayout>
   )
 }
