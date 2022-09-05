@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles'
 
 export const Container = styled('main')(({ theme }) => ({
+  flex: 1,
   width: '100%',
   maxWidth: 1140,
   padding: '0 1rem',
