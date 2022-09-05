@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 
 export const Container = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
-  paddingBottom: '11.25rem', // 180px,
+  padding: '180px 0',
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column-reverse',
     alignItems: 'center',

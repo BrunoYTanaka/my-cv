@@ -8,21 +8,13 @@ import { LINKS } from '@/constants/links'
 import { useDrawer } from '@/hooks/useDrawer'
 import { useTranslation } from 'next-i18next'
 import { AnimateSharedLayout } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 function LeftSidebar() {
   const { t } = useTranslation('header')
-  const [currentIndex, setCurrentIndex] = React.useState(0)
   const { toggleLeftDrawer } = useDrawer()
 
-  const handleClick = (index: number) => {
-    setCurrentIndex(index)
-    toggleLeftDrawer(false)
-  }
-
-  const changeCurrentIndex = (index: number) => {
-    setCurrentIndex(index)
-  }
-
+  const router = useRouter()
   return (
     <S.Sidebar>
       <Box textAlign="end">
@@ -32,17 +24,13 @@ function LeftSidebar() {
       </Box>
       <S.SidebarWrapper>
         <AnimateSharedLayout>
-          {LINKS.map((item, index) => (
+          {LINKS.map((link) => (
             <CustomLink
-              changeCurrentIndex={changeCurrentIndex}
-              position={index}
-              to={item.to}
-              key={item.id}
-              isActive={currentIndex === index}
-              onClick={() => handleClick(index)}
-              disable={true}
+              to={link.to}
+              key={link.id}
+              isActive={router.pathname === link.to}
             >
-              {t(item.text)}
+              {t(link.text)}
             </CustomLink>
           ))}
         </AnimateSharedLayout>

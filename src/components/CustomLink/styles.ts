@@ -27,4 +27,8 @@ export const Underline = styled(motion.div)(({ theme }) => ({
   borderRadius: '1rem',
   opacity: 0.85,
   backgroundColor: theme.palette.text.primary,
+
+  [theme.breakpoints.down('sm')]: {
+    width: '50%',
+  },
 }))
