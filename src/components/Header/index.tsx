@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import { useRouter } from 'next/router'
 import * as S from './styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -10,37 +11,13 @@ import { LINKS } from '@/constants/links'
 import { useTranslation } from 'next-i18next'
 import SettingsIcon from '@mui/icons-material/Settings'
 import { AnimateSharedLayout } from 'framer-motion'
-import { Events } from 'react-scroll'
 
 function Header(): ReactElement {
   const { t } = useTranslation('header')
-  const [currentIndex, setCurrentIndex] = React.useState(0)
   const { toggleLeftDrawer, toggleRightDrawer } = useDrawer()
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
-
-  const [disable, setDisable] = React.useState(true)
-  const handleClick = (index: number) => {
-    setCurrentIndex(index)
-  }
-
-  const changeCurrentIndex = (index: number) => {
-    setCurrentIndex(index)
-  }
-
-  React.useEffect(() => {
-    Events.scrollEvent.register('begin', () => {
-      setDisable(false)
-    })
-    Events.scrollEvent.register('end', () => {
-      setDisable(true)
-    })
-
-    return () => {
-      Events.scrollEvent.remove('begin')
-      Events.scrollEvent.remove('end')
-    }
-  }, [setDisable])
+  const router = useRouter()
 
   return (
     <S.Header>
@@ -52,17 +29,13 @@ function Header(): ReactElement {
             </IconButton>
           ) : (
             <AnimateSharedLayout>
-              {LINKS.map((item, index) => (
+              {LINKS.map((link) => (
                 <CustomLink
-                  to={item.to}
-                  key={item.id}
-                  position={index}
-                  isActive={currentIndex === index}
-                  onClick={() => handleClick(index)}
-                  changeCurrentIndex={changeCurrentIndex}
-                  disable={disable}
+                  to={link.to}
+                  key={link.id}
+                  isActive={router.pathname === link.to}
                 >
-                  {t(item.text)}
+                  {t(link.text)}
                 </CustomLink>
               ))}
             </AnimateSharedLayout>

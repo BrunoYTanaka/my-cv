@@ -1,28 +1,25 @@
 import { ExperiencesScreen } from '@/screens/Experiences'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { DefaultLayout } from '@/layout/defaultLayout'
 import { SSRConfig } from 'next-i18next'
-import api from '@/services/api'
+// import api from '@/services/api'
+import { experiences } from '@/settings'
 
 interface SkillsProps extends SSRConfig {
   layout: LayoutProps
 }
 
 export default function SkillsPage(props: SkillsProps) {
-  return (
-    <DefaultLayout>
-      <ExperiencesScreen {...props} />
-    </DefaultLayout>
-  )
+  return <ExperiencesScreen {...props} />
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
-  const data = api.get<LayoutProps>('/1').then((response) => response.data)
+  // const data = api.get<LayoutProps>('/1').then((response) => response.data)
+  const data = { experiences }
 
   return {
     props: {
       ...(await serverSideTranslations(locale)),
-      layout: await data,
+      layout: data,
     },
   }
 }
