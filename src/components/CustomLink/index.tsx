@@ -6,7 +6,7 @@ interface CustomLinkProps {
   children: React.ReactNode
   isActive: boolean
   to: string
-  onClick: () => void
+  onClick?: () => void
 }
 
 function CustomLink({ children, to, isActive, onClick }: CustomLinkProps) {
