@@ -1,8 +1,7 @@
 import { styled } from '@mui/material/styles'
-import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
 
-export const CustomLink = styled(Link)(({ theme }) => ({
+export const CustomLink = styled('a')(({ theme }) => ({
   position: 'relative',
   textDecoration: 'none',
   color: theme.palette.text.primary,

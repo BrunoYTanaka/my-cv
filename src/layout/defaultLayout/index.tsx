@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { DrawerContextProvider } from '@/hooks/useDrawer'
+import { BackToTop } from '@/components/BackToTop'
 import { useThemeMode } from '@/hooks/useThemeMode'
 import { Drawer } from '@/components/Drawer'
 import { ThemeProvider } from '@mui/material/styles'
@@ -22,6 +23,7 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
           <Drawer direction="left" />
           <S.Container>{children}</S.Container>
           <Drawer toggleThemeMode={toggleThemeMode} />
+          <BackToTop />
           <Footer />
         </DrawerContextProvider>
       </IntlContextProvider>
