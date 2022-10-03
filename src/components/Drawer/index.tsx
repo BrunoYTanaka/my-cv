@@ -5,7 +5,7 @@ import { useDrawer } from '@/hooks/useDrawer'
 import { RightSidebar, LeftSidebar } from './components'
 
 interface DrawerProps {
-  toggleThemeMode?: () => void
+  toggleThemeMode?: (theme: Mode) => void
   direction?: 'right' | 'left'
 }
 
@@ -17,8 +17,8 @@ function Drawer({ toggleThemeMode, direction = 'right' }: DrawerProps) {
     toggleRightDrawer,
   } = useDrawer()
 
-  const handleChangeTheme = () => {
-    toggleThemeMode && toggleThemeMode()
+  const handleChangeTheme = (theme: Mode) => {
+    toggleThemeMode && toggleThemeMode(theme)
   }
 
   const isRight = direction === 'right'

@@ -2,18 +2,16 @@ import React from 'react'
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import { grey } from '@mui/material/colors'
 
-interface ThemeModeContextData {
+interface ThemeModeData {
   theme: ThemeOptions
-  toggleThemeMode: () => void
+  toggleThemeMode: (theme: Mode) => void
 }
 
-type Mode = 'light' | 'dark'
-
-export const useThemeMode = (): ThemeModeContextData => {
+export const useThemeMode = (): ThemeModeData => {
   const [mode, setMode] = React.useState<Mode>('dark')
 
-  const toggleThemeMode = React.useCallback(() => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
+  const toggleThemeMode = React.useCallback((theme: Mode) => {
+    setMode(theme)
   }, [])
 
   React.useEffect(() => {

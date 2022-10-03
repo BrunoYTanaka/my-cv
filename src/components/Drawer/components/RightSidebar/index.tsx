@@ -13,7 +13,7 @@ import { useDrawer } from '@/hooks/useDrawer'
 import * as S from './styles'
 
 interface RightSidebarProps {
-  handleChangeTheme: () => void
+  handleChangeTheme: (theme: Mode) => void
 }
 
 const RightSidebar = ({ handleChangeTheme }: RightSidebarProps) => {
@@ -57,14 +57,14 @@ const RightSidebar = ({ handleChangeTheme }: RightSidebarProps) => {
         </Typography>
         <S.ButtonsWrapper>
           <S.Button
-            onClick={handleChangeTheme}
+            onClick={() => handleChangeTheme('light')}
             isSelected={theme.palette?.mode === 'light'}
           >
             <LightModeIcon />
             {t('light')}
           </S.Button>
           <S.Button
-            onClick={handleChangeTheme}
+            onClick={() => handleChangeTheme('dark')}
             isSelected={theme.palette?.mode === 'dark'}
           >
             <DarkModeIcon />

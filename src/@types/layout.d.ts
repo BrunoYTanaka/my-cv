@@ -71,3 +71,5 @@ interface SkillsProps {
     skills: Skill[]
   }
 }
+
+type Mode = 'light' | 'dark'
