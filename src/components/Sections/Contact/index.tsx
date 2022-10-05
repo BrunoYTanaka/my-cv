@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import Grid from '@mui/material/Grid'
 import { useTranslation } from 'next-i18next'
 import { Avatar, AvatarContainer, Container, GreetingText } from './styles'
@@ -14,7 +15,13 @@ function Contact({
   contacts,
   socialMedia,
 }: ContactProps): ReactElement {
-  const { t } = useTranslation('contact')
+  const { t } = useTranslation(['contact', 'glossary'])
+  const [text] = useTypewriter({
+    words: ['Bruno Yoichi Tanaka', job, 'um code lover'],
+    loop: true,
+    delaySpeed: 2000,
+  })
+
   return (
     <Container container justifyContent="center" alignItems="center" id="home">
       <Grid item sm={6}>
@@ -22,10 +29,8 @@ function Contact({
           <GreetingText variant="body1"> {t('contact-greeting')}</GreetingText>
         </MotionBox>
         <Typography delay={0.2} mt={1.25} mb={1.25} variant="h4">
-          {name}
-        </Typography>
-        <Typography delay={0.3} mt={1} mb={3.75} variant="h5">
-          {job}
+          {`${t('iam', { ns: 'glossary' })} ${text}`}
+          <Cursor />
         </Typography>
         <MotionBox delay={0.4}>
           <List>
