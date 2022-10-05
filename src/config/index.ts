@@ -2,7 +2,7 @@ export const layout = {
   contact: {
     greetings: "Hello I'm",
     name: 'Bruno Yoichi Tanaka',
-    job: 'Front-end Programmer',
+    job: 'Frontend Programmer',
     avatarUrl: 'https://avatars.githubusercontent.com/u/37604496?v=4',
     contacts: [
       {
@@ -18,7 +18,7 @@ export const layout = {
       {
         id: 2,
         icon: 'location',
-        text: 'MS, Dourados, Brazil',
+        text: 'MS, Dourados, Brazil 🇧🇷​',
       },
     ],
     socialMedia: [

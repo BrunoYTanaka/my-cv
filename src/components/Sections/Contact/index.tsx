@@ -11,13 +11,13 @@ import { icons } from '@/constants/icons'
 function Contact({
   name,
   avatarUrl,
-  job,
   contacts,
   socialMedia,
 }: ContactProps): ReactElement {
-  const { t } = useTranslation(['contact', 'glossary'])
+  const { t } = useTranslation('contact')
+
   const [text] = useTypewriter({
-    words: ['Bruno Yoichi Tanaka', job, 'um code lover'],
+    words: [t('contact-iam'), t('contact-job'), t('contact-love')],
     loop: true,
     delaySpeed: 2000,
   })
@@ -29,7 +29,7 @@ function Contact({
           <GreetingText variant="body1"> {t('contact-greeting')}</GreetingText>
         </MotionBox>
         <Typography delay={0.2} mt={1.25} mb={1.25} variant="h4">
-          {`${t('iam', { ns: 'glossary' })} ${text}`}
+          {text}
           <Cursor />
         </Typography>
         <MotionBox delay={0.4}>
