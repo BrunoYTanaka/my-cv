@@ -20,7 +20,6 @@ function DefaultLayout({ children }: DefaultLayoutProps) {
       <IntlContextProvider>
         <DrawerContextProvider>
           <Header />
-          <Drawer direction="left" />
           <S.Container>{children}</S.Container>
           <Drawer toggleThemeMode={toggleThemeMode} />
           <BackToTop />

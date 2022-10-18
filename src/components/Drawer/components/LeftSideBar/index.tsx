@@ -12,6 +12,19 @@ function LeftSidebar() {
   const { t } = useTranslation('header')
   const { toggleLeftDrawer } = useDrawer()
 
+  const onClick = (to: string) => {
+    toggleLeftDrawer(false)
+
+    const section = document.getElementById(to)
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      })
+    }
+  }
+
   return (
     <S.Sidebar>
       <Box textAlign="end">
@@ -25,7 +38,7 @@ function LeftSidebar() {
             to={item.to}
             key={item.id}
             isActive={false}
-            onClick={() => toggleLeftDrawer(false)}
+            onClick={onClick}
           >
             {t(item.text)}
           </CustomLink>

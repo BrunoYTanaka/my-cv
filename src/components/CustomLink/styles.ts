@@ -1,9 +1,11 @@
 import { styled } from '@mui/material/styles'
 import { motion } from 'framer-motion'
 
-export const CustomLink = styled('a')(({ theme }) => ({
+export const CustomLink = styled('button')(({ theme }) => ({
   position: 'relative',
   textDecoration: 'none',
+  backgroundColor: 'transparent',
+  border: 'none',
   color: theme.palette.text.primary,
   fontSize: '1.125rem', //18px
   lineHeight: '1.875rem', //30px

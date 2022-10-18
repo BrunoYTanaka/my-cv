@@ -8,6 +8,7 @@ export const SidebarWrapper = styled('nav')(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
+  alignItems: 'flex-start',
   marginTop: '4rem',
   gap: '0.625rem', //10px
 }))
