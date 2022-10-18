@@ -9,12 +9,15 @@ export const CustomLink = styled('a')(({ theme }) => ({
   lineHeight: '1.875rem', //30px
   fontWeight: 700,
   cursor: 'pointer',
-  paddingBottom: '0.5rem', //8px
   transition: 'all ease-in-out .2s',
   textTransform: 'capitalize',
 
   '&:hover': {
     color: theme.palette.primary.main,
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    paddingBottom: '0.5rem', //8px
   },
 }))
 

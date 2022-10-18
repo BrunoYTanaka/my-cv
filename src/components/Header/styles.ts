@@ -1,6 +1,10 @@
 import { styled } from '@mui/material/styles'
 
 export const Header = styled('header')(({ theme }) => ({
+  position: 'fixed',
+  top: 0,
+  width: '100%',
+  zIndex: 1,
   height: '5rem', //80px
   backgroundColor: theme.palette.neutral,
 }))
