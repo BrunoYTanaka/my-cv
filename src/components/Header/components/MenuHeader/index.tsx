@@ -5,47 +5,37 @@ import CloseIcon from '@mui/icons-material/Close'
 import * as S from './styles'
 import { CustomLink } from '@/components/CustomLink'
 import { LINKS } from '@/constants/links'
-import { useDrawer } from '@/hooks/useDrawer'
 import { useTranslation } from 'next-i18next'
 
-function LeftSidebar() {
+interface MenuHeaderProps {
+  onClose: () => void
+  onClickLink: (to: string) => void
+}
+
+function MenuHeader({ onClose, onClickLink }: MenuHeaderProps) {
   const { t } = useTranslation('header')
-  const { toggleLeftDrawer } = useDrawer()
-
-  const onClick = (to: string) => {
-    toggleLeftDrawer(false)
-
-    const section = document.getElementById(to)
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      })
-    }
-  }
 
   return (
-    <S.Sidebar>
+    <S.MenuHeader>
       <Box textAlign="end">
-        <IconButton onClick={() => toggleLeftDrawer(false)}>
+        <IconButton onClick={onClose}>
           <CloseIcon />
         </IconButton>
       </Box>
-      <S.SidebarWrapper>
+      <S.MenuHeaderWrapper>
         {LINKS.map((item) => (
           <CustomLink
             to={item.to}
             key={item.id}
             isActive={false}
-            onClick={onClick}
+            onClick={onClickLink}
           >
             {t(item.text)}
           </CustomLink>
         ))}
-      </S.SidebarWrapper>
-    </S.Sidebar>
+      </S.MenuHeaderWrapper>
+    </S.MenuHeader>
   )
 }
 
-export { LeftSidebar }
+export { MenuHeader }

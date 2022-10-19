@@ -1,10 +1,10 @@
 import { styled } from '@mui/material/styles'
 
-export const Sidebar = styled('div')(() => ({
+export const MenuHeader = styled('div')(() => ({
   padding: '1.25rem',
 }))
 
-export const SidebarWrapper = styled('nav')(() => ({
+export const MenuHeaderWrapper = styled('nav')(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',

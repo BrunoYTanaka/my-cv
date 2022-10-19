@@ -12,11 +12,11 @@ import CloseIcon from '@mui/icons-material/Close'
 import { useDrawer } from '@/hooks/useDrawer'
 import * as S from './styles'
 
-interface RightSidebarProps {
+interface MenuSettingsProps {
   handleChangeTheme: (theme: Mode) => void
 }
 
-const RightSidebar = ({ handleChangeTheme }: RightSidebarProps) => {
+const MenuSettings = ({ handleChangeTheme }: MenuSettingsProps) => {
   const { t, i18n } = useTranslation('glossary')
   const { toggleRightDrawer } = useDrawer()
   const { switchLang } = useIntl()
@@ -100,4 +100,4 @@ const RightSidebar = ({ handleChangeTheme }: RightSidebarProps) => {
   )
 }
 
-export { RightSidebar }
+export { MenuSettings }
