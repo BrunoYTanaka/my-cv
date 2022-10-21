@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export const Container = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
-  padding: '180px 0',
+  padding: '180px 0 0',
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column-reverse',
     maxWidth: 'none',

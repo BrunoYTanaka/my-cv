@@ -12,14 +12,65 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import { Box, SwipeableDrawer } from '@mui/material'
 import { MenuHeader } from './components/MenuHeader'
 
+const getDimensions = (ele: HTMLElement) => {
+  const { height } = ele.getBoundingClientRect()
+
+  const offsetTop = ele.offsetTop
+  const offsetBottom = offsetTop + height
+
+  return {
+    height,
+    offsetTop,
+    offsetBottom,
+  }
+}
+
+interface RefData {
+  current: HTMLElement
+  section: string
+}
+
 function Header(): ReactElement {
   const { t } = useTranslation('header')
   const [visibleSection, setVisibleSection] = React.useState('home')
+  const [refs, setRefs] = React.useState<RefData[]>([])
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
   const { toggleRightDrawer } = useDrawer()
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
+
+  React.useEffect(() => {
+    if (refs.length === 0) {
+      const elements = LINKS.map((link) => {
+        return {
+          current: document.getElementById(link.to) as HTMLElement,
+          section: link.to,
+        }
+      })
+      setRefs(elements)
+    }
+  }, [refs])
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 300
+
+      const selected = refs.find((ref) => {
+        const { offsetBottom, offsetTop } = getDimensions(ref.current)
+        return scrollPosition > offsetTop && scrollPosition < offsetBottom
+      })
+
+      if (selected && selected.section !== visibleSection) {
+        setVisibleSection(selected.section)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [refs, visibleSection])
 
   const onClick = (to: string) => {
     setIsDrawerOpen(false)
