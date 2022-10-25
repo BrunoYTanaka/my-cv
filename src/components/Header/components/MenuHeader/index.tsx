@@ -10,9 +10,10 @@ import { useTranslation } from 'next-i18next'
 interface MenuHeaderProps {
   onClose: () => void
   onClickLink: (to: string) => void
+  visibleSection: string
 }
 
-function MenuHeader({ onClose, onClickLink }: MenuHeaderProps) {
+function MenuHeader({ onClose, onClickLink, visibleSection }: MenuHeaderProps) {
   const { t } = useTranslation('header')
 
   return (
@@ -27,7 +28,7 @@ function MenuHeader({ onClose, onClickLink }: MenuHeaderProps) {
           <CustomLink
             to={item.to}
             key={item.id}
-            isActive={false}
+            isActive={visibleSection === item.to}
             onClick={onClickLink}
           >
             {t(item.text)}

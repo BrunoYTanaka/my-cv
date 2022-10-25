@@ -75,7 +75,6 @@ function Header(): ReactElement {
   const onClick = (to: string) => {
     setIsDrawerOpen(false)
     const section = document.getElementById(to)
-    setVisibleSection(to)
     if (section) {
       section.scrollIntoView({
         behavior: 'smooth',
@@ -122,6 +121,7 @@ function Header(): ReactElement {
             <MenuHeader
               onClose={() => setIsDrawerOpen(false)}
               onClickLink={onClick}
+              visibleSection={visibleSection}
             />
           </Box>
         </SwipeableDrawer>
