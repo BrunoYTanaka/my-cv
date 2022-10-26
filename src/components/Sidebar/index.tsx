@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
-import { useDrawer } from '@/hooks/useDrawer'
+import { useSettingsSidebar } from '@/hooks/useSettingsSidebar'
 import { MenuSettings } from './components/MenuSettings'
 
 interface SidebarProps {
@@ -9,7 +9,7 @@ interface SidebarProps {
 }
 
 function Sidebar({ toggleThemeMode }: SidebarProps) {
-  const { isRightDrawerOpen, toggleRightDrawer } = useDrawer()
+  const { isSettingsSidebarOpen, handleSettingsSidebar } = useSettingsSidebar()
 
   const handleChangeTheme = (theme: Mode) => {
     toggleThemeMode && toggleThemeMode(theme)
@@ -18,9 +18,9 @@ function Sidebar({ toggleThemeMode }: SidebarProps) {
   return (
     <SwipeableDrawer
       anchor="right"
-      open={isRightDrawerOpen}
-      onClose={() => toggleRightDrawer(false)}
-      onOpen={() => toggleRightDrawer(true)}
+      open={isSettingsSidebarOpen}
+      onClose={() => handleSettingsSidebar(false)}
+      onOpen={() => handleSettingsSidebar(true)}
     >
       <Box sx={{ width: 360 }} role="presentation">
         <MenuSettings handleChangeTheme={handleChangeTheme} />

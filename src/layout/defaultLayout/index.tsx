@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { DrawerContextProvider } from '@/hooks/useDrawer'
+import { DrawerContextProvider } from '@/hooks/useSettingsSidebar'
 import { BackToTop } from '@/components/BackToTop'
 import { useThemeMode } from '@/hooks/useThemeMode'
 import { Sidebar } from '@/components/Sidebar'

@@ -9,7 +9,7 @@ import { useTheme } from '@mui/material/styles'
 import { useIntl } from '@/hooks/useIntl'
 import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { useDrawer } from '@/hooks/useDrawer'
+import { useSettingsSidebar } from '@/hooks/useSettingsSidebar'
 import * as S from './styles'
 
 interface MenuSettingsProps {
@@ -18,7 +18,7 @@ interface MenuSettingsProps {
 
 const MenuSettings = ({ handleChangeTheme }: MenuSettingsProps) => {
   const { t, i18n } = useTranslation('glossary')
-  const { toggleRightDrawer } = useDrawer()
+  const { handleSettingsSidebar } = useSettingsSidebar()
   const { switchLang } = useIntl()
   const theme = useTheme()
 
@@ -39,7 +39,7 @@ const MenuSettings = ({ handleChangeTheme }: MenuSettingsProps) => {
         >
           {t('settings')}
         </Typography>
-        <IconButton onClick={() => toggleRightDrawer(false)}>
+        <IconButton onClick={() => handleSettingsSidebar(false)}>
           <CloseIcon />
         </IconButton>
       </Box>

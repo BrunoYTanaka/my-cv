@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
-import { useDrawer } from '@/hooks/useDrawer'
+import { useSettingsSidebar } from '@/hooks/useSettingsSidebar'
 import { CustomLink } from '@/components/CustomLink'
 import { LINKS } from '@/constants/links'
 import { useTranslation } from 'next-i18next'
@@ -36,7 +36,7 @@ function Header(): ReactElement {
   const [refs, setRefs] = React.useState<RefData[]>([])
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
-  const { toggleRightDrawer } = useDrawer()
+  const { handleSettingsSidebar } = useSettingsSidebar()
   const theme = useTheme()
   const isMobileScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -105,7 +105,7 @@ function Header(): ReactElement {
               ))
             )}
           </S.LinkWrapper>
-          <IconButton onClick={() => toggleRightDrawer(true)}>
+          <IconButton onClick={() => handleSettingsSidebar(true)}>
             <SettingsIcon />
           </IconButton>
         </S.HeaderWrapper>
