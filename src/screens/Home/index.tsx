@@ -1,6 +1,6 @@
 import React from 'react'
-import { Contact, AboutMe, Skills, Experiences } from '@/components/Sections'
 import { SSRConfig } from 'next-i18next'
+import { Contact, AboutMe, Skills, Experiences } from '@/components/Sections'
 import { Metadata } from '@/components/Metadata'
 
 interface HomeProps extends SSRConfig {
