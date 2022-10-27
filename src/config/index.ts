@@ -11,11 +11,6 @@ export const layout = {
         text: 'brunoyoichi2@gmail.com',
       },
       {
-        id: 1,
-        icon: 'phone',
-        text: '+55 (67) 9 8175-2148',
-      },
-      {
         id: 2,
         icon: 'location',
         text: 'MS, Dourados, Brazil 🇧🇷​',
